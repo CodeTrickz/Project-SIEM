@@ -1,7 +1,7 @@
 ELK STACK vs Security Onion vs Apache Metron vs OSSEC
 
 # ELK STACK:
-Gebruikte technologieen: Elastic search , Logstash , Kibana 
+Gebruikte technologieen: Elastic search , Logstash , Kibana , SOC , Hunt , TheHive , Playbook Fleet , Navigator , Osquery , Beats , Suricata , Zeek , Streika , Grafana , ...
 Logverzameling: via Logstash = (syslog ,beats, ...)
 => security Onion en wazuh maken hier gebruik van. 
 
@@ -62,4 +62,7 @@ nadelen:
 
 guldentops zegt wazuh
 vermonden zegt security onion => uitgebreider wazuh is een subset hiervan
---> resource intensief 
+--> resource intensief 16 GB RAM , 200GB , 4CPU
+
+Security Onion is meer gefocust op hele netwerk terwijl wazuh meer host based is. 
+
