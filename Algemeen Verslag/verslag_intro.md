@@ -21,7 +21,7 @@ Echter is deze SIEM niet de beste keuze aangezien er problemen kunnen optreden b
 OSSIM is veel geavanceerdere SIEM T.O.V. Graylog. Naast het gebruik van ELasticsearch maakt de SIEM ook gebruikt van onder meer Snort en OpenVAS. Hierdoor is mogelijk om meer logs binnen het netwerk te verzamelen en ook aan vulnerability assesment te doen. Jammer genoeg zijn enkele functies betalend waardoor je SIEM niet volledig open-source kunt gebruiken. 
 
 ## Security Onion
-Security Onion is een all-in-one SIEM die zeer diverse technologieën "zoals Suricata , snort , zeek , ..." combineerd tot één geheel. De SIEM is netwerk gefocust waardoor je hele netwerk zeer goed kunt monitoren. Daarnaast biedt de SIEM ook Host-based functies waarmee de Hosts kunnen gemonitord worden. 
+Security Onion is een all-in-one SIEM die zeer diverse technologieën "zoals Suricata , snort , zeek , ..." combineerd tot één geheel. De SIEM is netwerk gefocust (routers/switches/Netwerk Traffic) waardoor je hele netwerk zeer goed kunt monitoren. Daarnaast biedt de SIEM ook Host-based functies waarmee de Hosts kunnen gemonitord worden. 
 
 Echter heeft de SIEM één groot nadeel, Hij gebruikt zeer veel resources (200GB opslag , 16GB RAM 4CPU cores). Maar dit compenseerd de SIEM wel met zijn mogelijkheden. Idealiter zouden wij deze SIEM willen gebruiken , maar moest het niet mogelijk zijn omwille van de resources gebruiken we Wazuh als alternatief. 
 
@@ -29,8 +29,14 @@ Testen hiermee is ook lastig want de meeste van ons hebben deze resources niet z
 
 ## Wazuh
 
-Wazuh is een SIEM waarmee we hebben kennisgemaakt binnen de school. Het is Redelijke eenvoudige SIEM die met behulp ELK-stack zijn logs genereerd en analyseerd. De SIEM zelf is zeer lightweight en is Integreerbaar met verschillende andere Technologieën. Belangrijk is wel op te merken dat Wazuh een beperkte schaalbaarheid heeft en het soms moeilijk kan zijn om de juiste regels te creëren.  
+Wazuh is een SIEM waarmee we hebben kennisgemaakt binnen de school. Het is Redelijke eenvoudige SIEM die met behulp ELK-stack zijn logs genereerd en analyseerd. De SIEM zelf is zeer lightweight en is Integreerbaar met verschillende andere Technologieën. Belangrijk is wel op te merken dat Wazuh een beperkte schaalbaarheid heeft en het soms moeilijk kan zijn om de juiste regels te creëren.
 
+Wazuh is een host-based SIEM. Wat betekend dat de SIEM-oploosing zich focust op het bewaken en analyseren van de individuele hosts/endpoints binnen een netwerk. 
+
+### conclusie
+De beste keuze zou Security Onion zijn voor dit project. De SIEM heeft grote set aan tools tot zijn beschikking om het netwerk te monitoren. Het nadeel is dat deze SIEM-oplossing zeer veel resources vraagt. 
+
+Indien het niet mogelijk is om deze resources vrij te maken zal de keuze eerder vallen op wazuh. Deze SIEM-oplossing zeker een goed alternatief voor Security Onion. Maar dan is het ook zeer belangrijk om te controleren waar deze SIEM te kortkoming heeft en deze op te lossen zijn. 
 
 
 # Hoe mobile clients controleren? (EDR) 
@@ -56,3 +62,28 @@ Of elke switch en router wordt manueel ingesteld om zijn logs te sturen naar de 
 https://www.cisco.com/c/en/us/td/docs/switches/metro/me1200/controller/guide/b_nid_controller_book/b_nid_controller_book_chapter_010101.pdf 
 
 # Hoe OVA up to date houden? 
+
+
+# Werking van gekozen SIEM
+
+## Waar schiet de SIEM te kort ? 
+
+### eventuele oplossingen voor deze tekortkomingen 
+
+
+# Bronnen
+### wazuh
+https://wazuh.com/
+### Security Onion
+https://securityonionsolutions.com/
+### OSSIM
+https://cybersecurity.att.com/
+### Graylog
+https://graylog.org/
+
+
+
+
+
+
+
