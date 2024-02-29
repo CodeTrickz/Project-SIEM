@@ -49,8 +49,27 @@ In Security Onion is "Launcher" een component of hulpprogramma ontworpen om de i
 Een managementwrapper is een softwarelaag of -interface die rond een ander stuk software zit om extra beheermogelijkheden te bieden, waardoor de beheertaken met betrekking tot die software vereenvoudigd worden. 
 Launcher bekijkt elk uur of er een update beschikbaar is, zo ja zal deze gedownload worden en geinstalleerd worden.
 
-Het kibana dashboard gaat een overview geven van de osquery logs in het systeem.   
+Het kibana dashboard gaat een overview geven van de osquery logs in het systeem.
+## Osquery
+Osquery is een makkelijk te gebruiken monitoring tool dat gebruik maakt van SQL om alle verkregen informatie van operating systems samen te vatten in een relationele database. 
+Osquery ondersteund Windows, macOS en linux OS.
+Het is snel en lightweight. Osquery is perfect om te gebruiken voor het monitoren van devices voor real-time data.
+Enkele manieren voor vulnerability management met Osquery : 
+- Check voor slechte security configuratie
+- ongewilde malicious applicatie of extenties
+- Controleer de status van firewalls verifieren
+- Controleer op verouderde of kwetsbare besturingssysteem- en softwareversies.
 
+## FleetDM
+FleetDM, of Fleet, is een open-source tool ontwikkeld door Kolide. Het is een gecentraliseerd beheerplatform voor osquery, een open-source framework voor de beveiliging van endpoints dat query's en monitoring van endpoints mogelijk maakt met behulp van SQL-achtige query's. Fleet zorgt voor een webinterface, hier gaan we de date die we hebben verkregen met osquery op visualiseren. 
+Fleet werkt met een query libary van vragen. Bijvoorbeeld :
+Wat operating system is geinstalleerd op mijn apparaat?
+```
+1. Select Queries in the top navigation.
+2. Select Create new query (or browse your organization's queries for "operating system information" in the search bar).
+3. Type the query you would like to run, SELECT * FROM os_version;.
+4. Select Run query, then select All hosts (your device may be the only host added to Fleet), and finally select Run to execute the query.
+```
 # Hoe logs van switches en routers opvragen? (syslog) 
 
 Syslog laat een netwerk node toe om logs van zijn systeem naar een ander systeem te sturen dat een syslog daemon draait, deze syslog service slaagt de logs op in bestanden. Hiervoor is er een server nodig die een syslog daemon draait, deze logs moeten dan worden doorgestuurd naar onze SIEM server door middel van een client agent of door de syslog daemon op de SIEM server zelf te laten draaien. Elke router en switch moet worden ingesteld zodat ze hun logs versturen naar de centrale server. 
