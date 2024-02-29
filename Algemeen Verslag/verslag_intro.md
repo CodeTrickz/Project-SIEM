@@ -56,10 +56,10 @@ We kunnen ook ansible gebruiken om zo voor elke vendor een aparte playbook te sc
 
 Of elke switch en router wordt manueel ingesteld om zijn logs te sturen naar de SIEM server. Dit vereist heel veel manueel werk en laat ons niet toe om de omgeving snel op te zetten.
 
-https://www.cisco.com/c/en/us/td/docs/switches/metro/me1200/controller/guide/b_nid_controller_book/b_nid_controller_book_chapter_010101.pdf 
 
 # Hoe OVA up to date houden? 
 
+Er wordt een ansible file geschreven die controleert of we de meest recente versie van de SIEM hebben, bij een outdated versie pullen we de nieuwste versie en wordt deze lokaal binnengehaald. De OVA wordt dan gedeployed en alle ansible scripts die nodig zijn om het netwerk correcct in te stellen worden uitgevoerd.
 
 # Werking van gekozen SIEM
 
@@ -77,7 +77,8 @@ https://securityonionsolutions.com/
 https://cybersecurity.att.com/
 ### Graylog
 https://graylog.org/
-
+### Syslog
+https://www.cisco.com/c/en/us/td/docs/switches/metro/me1200/controller/guide/b_nid_controller_book/b_nid_controller_book_chapter_010101.pdf 
 
 
 
