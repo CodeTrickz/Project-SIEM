@@ -60,7 +60,7 @@ Enkele manieren voor vulnerability management met Osquery :
 - Controleer de status van firewalls verifieren
 - Controleer op verouderde of kwetsbare besturingssysteem- en softwareversies.
 
-## FleetDM
+### FleetDM
 FleetDM, of Fleet, is een open-source tool ontwikkeld door Kolide. Het is een gecentraliseerd beheerplatform voor osquery, een open-source framework voor de beveiliging van endpoints dat query's en monitoring van endpoints mogelijk maakt met behulp van SQL-achtige query's. Fleet zorgt voor een webinterface, hier gaan we de date die we hebben verkregen met osquery op visualiseren. 
 Fleet werkt met een query libary van vragen. Bijvoorbeeld :
 Wat operating system is geinstalleerd op mijn apparaat?
