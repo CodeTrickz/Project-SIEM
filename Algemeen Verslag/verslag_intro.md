@@ -84,6 +84,8 @@ We kunnen ook ansible gebruiken om zo voor elke vendor een aparte playbook te sc
 
 Of elke switch en router wordt manueel ingesteld om zijn logs te sturen naar de SIEM server. Dit vereist heel veel manueel werk en laat ons niet toe om de omgeving snel op te zetten.
 
+Switches en Routers moeten worden opgezet om alle logs naar de siem te versturen. Als we het netwerk monitoren met Zeek, dan zal deze alle syslogs loggen ookal waren deze niet voor deze SIEM bedoelt.
+
 
 # Hoe OVA up to date houden? 
 
