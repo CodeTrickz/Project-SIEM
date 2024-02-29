@@ -40,7 +40,16 @@ Indien het niet mogelijk is om deze resources vrij te maken zal de keuze eerder 
 
 
 # Hoe mobile clients controleren? (EDR) 
-Tijdens dit project gaan wij gebruik maken van security onion. Voor het verder beveiligen en monitoren van de endpoints gaan we gebruik maken van Wazuh. Wazuh kan geïntegreerd worden in Security onion. Voor de mobiele apparaten te beheren kunnen we Mobile Device Management (MDM) implementeren bij Wazuh of een Wazuh agent aanmaken voor mobiele apparaten. Deze agent kan worden aangepast om specifieke gebeurtenissen en activiteiten op mobiele apparaten te bewaken en naar de Wazuh-server te sturen voor analyse.   
+Bij EDR gaan we gebruik maken van Osquery, deze wordt door zowel wazuh als security onion ondersteund. Wazuh heeft een ingebouwde osquery module voor de wauzh agents. Die staat toe de Osquery in te stellen en data te verzamelen die gegenereerd is door de Osquery en deze dan door te sturen naar de manager.
+
+Bij security onion wordt er gebruik gemaakt van FleetDM. FleetDM is een opensource tool die wordt gebruikt als een centraal management platform gebruikt voor Osquery.
+
+Securety onion maakt gebruik van Launcher als management wrapper rond osquery.
+In Security Onion is "Launcher" een component of hulpprogramma ontworpen om de implementatie, configuratie en uitvoering van Osquery op uw netwerk of endpoints te beheren.
+Een managementwrapper is een softwarelaag of -interface die rond een ander stuk software zit om extra beheermogelijkheden te bieden, waardoor de beheertaken met betrekking tot die software vereenvoudigd worden. 
+Launcher bekijkt elk uur of er een update beschikbaar is, zo ja zal deze gedownload worden en geinstalleerd worden.
+
+Het kibana dashboard gaat een overview geven van de osquery logs in het systeem.   
 
 # Hoe logs van switches en routers opvragen? (syslog) 
 
