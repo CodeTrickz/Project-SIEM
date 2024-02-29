@@ -40,10 +40,7 @@ Indien het niet mogelijk is om deze resources vrij te maken zal de keuze eerder 
 
 
 # Hoe mobile clients controleren? (EDR) 
-
- 
-
- 
+Tijdens dit project gaan wij gebruik maken van security onion. Voor het verder beveiligen en monitoren van de endpoints gaan we gebruik maken van Wazuh. Wazuh kan geïntegreerd worden in Security onion. Voor de mobiele apparaten te beheren kunnen we Mobile Device Management (MDM) implementeren bij Wazuh of een Wazuh agent aanmaken voor mobiele apparaten. Deze agent kan worden aangepast om specifieke gebeurtenissen en activiteiten op mobiele apparaten te bewaken en naar de Wazuh-server te sturen voor analyse.   
 
 # Hoe logs van switches en routers opvragen? (syslog) 
 
