@@ -40,7 +40,7 @@ Indien het niet mogelijk is om deze resources vrij te maken zal de keuze eerder 
 
 
 # Hoe mobile clients controleren? (EDR) 
-Bij EDR gaan we gebruik maken van Osquery, deze wordt door zowel wazuh als security onion ondersteund. Wazuh heeft een ingebouwde osquery module voor de wauzh agents. Die staat toe de Osquery in te stellen en data te verzamelen die gegenereerd is door de Osquery en deze dan door te sturen naar de manager.
+Bij EDR gaan we gebruik maken van Osquery, deze wordt door zowel wazuh als security onion ondersteund. Wazuh heeft een ingebouwde osquery module voor de wazuh agents. Die staat toe de Osquery in te stellen en data te verzamelen die gegenereerd is door de Osquery en deze dan door te sturen naar de manager.
 
 Bij security onion wordt er gebruik gemaakt van FleetDM. FleetDM is een opensource tool die wordt gebruikt als een centraal management platform gebruikt voor Osquery.
 
@@ -52,58 +52,8 @@ Een managementwrapper is een softwarelaag of -interface die rond een ander stuk 
 Launcher bekijkt elk uur of er een update beschikbaar is, zo ja zal deze gedownload worden en geinstalleerd worden.
 
 Het kibana dashboard gaat een overview geven van de osquery logs in het systeem.
-## Osquery
-Osquery is een makkelijk te gebruiken monitoring tool dat gebruik maakt van SQL om alle verkregen informatie van operating systems samen te vatten in een relationele database. 
-Osquery ondersteund Windows, macOS en linux OS.
 
-Het is snel en lightweight. Osquery is perfect om te gebruiken voor het monitoren van devices voor real-time data.
-Enkele manieren voor vulnerability management met Osquery : 
-- Check voor slechte security configuratie
-- ongewilde malicious applicatie of extenties
-- Controleer de status van firewalls verifieren
-- Controleer op verouderde of kwetsbare besturingssysteem- en softwareversies.
 
-### FleetDM
-FleetDM, of Fleet, is een open-source tool ontwikkeld door Kolide. Het is een gecentraliseerd beheerplatform voor osquery, een open-source framework voor de beveiliging van endpoints dat query's (vragen) en monitoring van endpoints mogelijk maakt met behulp van SQL-achtige query's (vragen). 
-
-Fleet zorgt voor een webinterface, hier gaan we de data die we hebben verkregen met osquery op visualiseren. 
-Fleet werkt met een query libary van vragen. Wat houdt dit in : je stelt eigenlijk vragen aan de osquery in hetzelfde formaat als mySQL.
-
-Bijvoorbeeld :
-Wat operating system is geinstalleerd op mijn apparaat?
-```
-1. SELECT * FROM os_version
-```
-Je kan voor elke endpoint een verschillende query opstellen.
-### Hoe wordt de informatie weergegeven?
-Nadat je de query's hebt opgesteld in het FleetDM-dashboard en deze hebt toegewezen aan de gewenste endpoints, zal FleetDM de query's naar die endpoints distribueren. De Osquery-agent zal op elke endpoint de toegewezen query uitvoeren, de informatie verzamelen en de gekregen resultaten terugsturen naar het FleetDM dashboard.
-
-De resultaten van de uitgevoerde query's worden gepresenteerd in het FleetDM-dashboard. Je kunt verschillende weergaven gebruiken, zoals tabellen, grafieken of grafieken om de data te visualiseren.
-
-Kijk het gegeven voorbeeld : 
-![alt text for screen readers](fleetMD_dashboard.png)
-### Osquery voor macOS vs Windows vs Linux
-Voor macOS-systemen kun je bijvoorbeeld informatie ophalen over geïnstalleerde applicaties, draaiende processen, netwerkverbindingen, bestandssysteemactiviteit en meer. Specifieke zaken zoals toegangsrechten, firewallinstellingen en systeeminstellingen kunnen ook worden gecontroleerd.
-
-Bij windows komt hier nog bij dat je informatie kunt verzamelen over Windows-services, registervermeldingen, geplande taken, gebruikersactiviteit en meer.
-
-Bij de verschillende operating systems zijn de basisprincipes hetzelfde. Echter kunnen specifieke query's verschillen.
-
-Enkele voorbeelden van de verschillende query's.
-```
-Voor het ophalen van informatie over geïnstalleerde applicaties:
-
-- macOS: SELECT name, bundle_identifier, version FROM apps;
-- Windows: SELECT name, version FROM programs;
-- Linux: SELECT name, version FROM rpm_packages;
-
-Voor het ophalen van informatie over draaiende processen:
-
-- macOS: SELECT name, path, pid FROM processes;
-- Windows: SELECT name, path, pid FROM processes;
-- Linux: SELECT name, cwd, pid FROM processes;
-```
-De verschillen in deze query's staan goed gedocumenteerd en zijn makkelijk te vinden. Echter is het wel  belangrijk om bij het opstellen van de queries rekening te houden met deze verschillen, om steeds de juiste en meest relevante informatie te verkrijgen. 
 # Hoe logs van switches en routers opvragen? (syslog) 
 
 Syslog laat een netwerk node toe om logs van zijn systeem naar een ander systeem te sturen dat een syslog daemon draait, deze syslog service slaagt de logs op in bestanden. Hiervoor is er een server nodig die een syslog daemon draait, deze logs moeten dan worden doorgestuurd naar onze SIEM server door middel van een client agent of door de syslog daemon op de SIEM server zelf te laten draaien. Elke router en switch moet worden ingesteld zodat ze hun logs versturen naar de centrale server. 
@@ -125,14 +75,97 @@ Switches en Routers moeten worden opgezet om alle logs naar de siem te versturen
 
 Er wordt een ansible file geschreven die controleert of we de meest recente versie van de SIEM hebben, bij een outdated versie pullen we de nieuwste versie en wordt deze lokaal binnengehaald. De OVA wordt dan gedeployed en alle ansible scripts die nodig zijn om het netwerk correcct in te stellen worden uitgevoerd.
 
-# Werking van gekozen SIEM
+# Werking van de SIEM
 
 ## SIEM schema
 ![alt text for screen readers](SIEM2.png)
+
+### Monitoring
+#### Monitoring van infrastructuur via SNMP (CheckMK)
+
+### Vulnerability Assesment
+#### Vulnerability Scanner (OpenVAS)
+
+#### IDS (Snort/Suricata)
+
+### Inventory
+
+
+### CLOUD
+
+### SIEM
+#### EDR security (OsQuery)
+Osquery is een makkelijk te gebruiken monitoring tool dat gebruik maakt van SQL om alle verkregen informatie van operating systems samen te vatten in een relationele database. 
+Osquery ondersteund Windows, macOS en linux OS.
+
+Het is snel en lightweight. Osquery is perfect om te gebruiken voor het monitoren van devices voor real-time data.
+Enkele manieren voor vulnerability management met Osquery : 
+- Check voor slechte security configuratie
+- ongewilde malicious applicatie of extenties
+- Controleer de status van firewalls verifieren
+- Controleer op verouderde of kwetsbare besturingssysteem- en softwareversies.
+
+##### Osquery voor macOS vs Windows vs Linux
+Voor macOS-systemen kun je bijvoorbeeld informatie ophalen over geïnstalleerde applicaties, draaiende processen, netwerkverbindingen, bestandssysteemactiviteit en meer. Specifieke zaken zoals toegangsrechten, firewallinstellingen en systeeminstellingen kunnen ook worden gecontroleerd.
+
+Bij windows komt hier nog bij dat je informatie kunt verzamelen over Windows-services, registervermeldingen, geplande taken, gebruikersactiviteit en meer.
+
+Bij de verschillende operating systems zijn de basisprincipes hetzelfde. Echter kunnen specifieke query's verschillen.
+
+Enkele voorbeelden van de verschillende query's.
+```
+Voor het ophalen van informatie over geïnstalleerde applicaties:
+
+- macOS: SELECT name, bundle_identifier, version FROM apps;
+- Windows: SELECT name, version FROM programs;
+- Linux: SELECT name, version FROM rpm_packages;
+
+Voor het ophalen van informatie over draaiende processen:
+
+- macOS: SELECT name, path, pid FROM processes;
+- Windows: SELECT name, path, pid FROM processes;
+- Linux: SELECT name, cwd, pid FROM processes;
+```
+De verschillen in deze query's staan goed gedocumenteerd en zijn makkelijk te vinden. Echter is het wel  belangrijk om bij het opstellen van de queries rekening te houden met deze verschillen, om steeds de juiste en meest relevante informatie te verkrijgen. 
+
+#### Dashboard (FleetDM)
+FleetDM, of Fleet, is een open-source tool ontwikkeld door Kolide. Het is een gecentraliseerd beheerplatform voor osquery, een open-source framework voor de beveiliging van endpoints dat query's (vragen) en monitoring van endpoints mogelijk maakt met behulp van SQL-achtige query's (vragen). 
+
+Fleet zorgt voor een webinterface, hier gaan we de data die we hebben verkregen met osquery op visualiseren. 
+Fleet werkt met een query libary van vragen. Wat houdt dit in : je stelt eigenlijk vragen aan de osquery in hetzelfde formaat als mySQL.
+
+Bijvoorbeeld :
+Wat operating system is geinstalleerd op mijn apparaat?
+```
+1. SELECT * FROM os_version
+```
+Je kan voor elke endpoint een verschillende query opstellen.
+
+### Hoe wordt de informatie weergegeven?
+Nadat je de query's hebt opgesteld in het FleetDM-dashboard en deze hebt toegewezen aan de gewenste endpoints, zal FleetDM de query's naar die endpoints distribueren. De Osquery-agent zal op elke endpoint de toegewezen query uitvoeren, de informatie verzamelen en de gekregen resultaten terugsturen naar het FleetDM dashboard.
+
+De resultaten van de uitgevoerde query's worden gepresenteerd in het FleetDM-dashboard. Je kunt verschillende weergaven gebruiken, zoals tabellen, grafieken of grafieken om de data te visualiseren.
+
+Kijk het gegeven voorbeeld : 
+![alt text for screen readers](fleetMD_dashboard.png)
+
+#### SNMP server (Zeek)
+
+
+
+
 ## Waar schiet de SIEM te kort ? 
+Security Onion is een zeer krachtige SIEM-oplossing waarin veel verschillende stukken software/technologieën kunnen worden in geïntgereerd worden. Echter heeft deze oplossing een zeer groot nadeel, het gebruikt zeer veel resources:
+- 16 GB RAM minimum
+- 200 GB Opslag minimum
+- 4 CPU kernen minimum
+
+Hierdoor is het zeer moeilijk om de ISO van Security Onion lokaal op een hypervisor te draaien zeker als de pc niet voldoende resources heeft , dan zal de VM crashen tijdens de installatie ookal compenseer je het te kort aan RAM met een swap-file. 
 
 ### eventuele oplossingen voor deze tekortkomingen 
+Voorzie een PC of VM met voldoende resources. 
 
+# Hoofdvragen 
 
 # Bronnen
 ### wazuh
