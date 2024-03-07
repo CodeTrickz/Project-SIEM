@@ -94,7 +94,7 @@ Er wordt een ansible file geschreven die controleert of we de meest recente vers
 # Werking van gekozen SIEM
 
 ## SIEM schema
-![alt text for screen readers](SIEM.png)
+![alt text for screen readers](SIEM2.png)
 ## Waar schiet de SIEM te kort ? 
 
 ### eventuele oplossingen voor deze tekortkomingen 
