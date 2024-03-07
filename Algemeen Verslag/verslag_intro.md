@@ -79,6 +79,7 @@ Je kan voor elke endpoint een verschillende query opstellen.
 Nadat je de query's hebt opgesteld in het FleetDM-dashboard en deze hebt toegewezen aan de gewenste endpoints, zal FleetDM de query's naar die endpoints distribueren. De Osquery-agent zal op elke endpoint de toegewezen query uitvoeren, de informatie verzamelen en de gekregen resultaten terugsturen naar het FleetDM dashboard.
 
 De resultaten van de uitgevoerde query's worden gepresenteerd in het FleetDM-dashboard. Je kunt verschillende weergaven gebruiken, zoals tabellen, grafieken of grafieken om de data te visualiseren.
+
 Kijk het gegeven voorbeeld : 
 ![alt text for screen readers](fleetMD_dashboard.png)
 ### Osquery voor macOS vs Windows vs Linux
