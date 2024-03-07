@@ -82,14 +82,20 @@ Er wordt een ansible file geschreven die controleert of we de meest recente vers
 
 ### Monitoring
 #### Monitoring van infrastructuur via SNMP (CheckMK)
+De volledige infrastuctuur zal worden gemonitord worden doormiddel van CheckMK. Dit programma zal met behulp van het SNMP protocol , SNMP traps verzamelen en vervolgens doorsturen met behulp van een API naar de SNMP server die zal opgezet worden met behulp van Zeek. Zeek draait binnen in de Security Onion en zal een lijst bevatten met de meest voorkomende apparaten binnen de infrastructuur met bijhorende config. 
+
+Het Opzetten van CheckMK zal gebeuren door het monitoring team.
 
 ### Vulnerability Assesment
 #### Vulnerability Scanner (OpenVAS)
+Voor Vunerability Scanner zal er OpenVAS gebruikt worden. Deze zal doormiddel van automatisch scans kwetsbaarheden vastleggen in de infrastructuur en indien nodig het systeem alarmeren. De data van deze scanner zal worden geanalyseerd worden in de SIEM. Het formaat van deze data is standaard XML maar kan ook worden geconverteerd naar een JSON. 
+
+Hiervoor zal het Vulnerability Assesment team verantwoordelijk zijn.
 
 #### IDS (Snort/Suricata)
 
 ### Inventory
-
+De Inventory zal een lijst zijn met bijhorende configuratie zijn voor een goede werking over SNMP te garanderen. Deze lijst zal opgesteld worden door het Alerting team. 
 
 ### CLOUD
 
@@ -148,6 +154,8 @@ De resultaten van de uitgevoerde query's worden gepresenteerd in het FleetDM-das
 
 Kijk het gegeven voorbeeld : 
 ![alt text for screen readers](fleetMD_dashboard.png)
+
+Dit dashboard zal later worden geïntgreerd in een algemeen dashboard opgesteld door het dashboard team. 
 
 #### SNMP server (Zeek)
 
