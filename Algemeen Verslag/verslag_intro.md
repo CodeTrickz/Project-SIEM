@@ -104,6 +104,8 @@ De Inventory zal een lijst zijn met bijhorende configuratie zijn voor een goede 
 Osquery is een makkelijk te gebruiken monitoring tool dat gebruik maakt van SQL om alle verkregen informatie van operating systems samen te vatten in een relationele database. 
 Osquery ondersteund Windows, macOS en linux OS.
 
+De naam os query verteld eigenlijk letterlijk wat het programma doet. "Osquery lets you query OSs like a database". Het maakt gebruik van basis SQL commands om deze vragen te stellen over apparaten.
+
 Het is snel en lightweight. Osquery is perfect om te gebruiken voor het monitoren van devices voor real-time data.
 Enkele manieren voor vulnerability management met Osquery : 
 - Check voor slechte security configuratie
