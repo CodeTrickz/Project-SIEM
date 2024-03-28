@@ -183,6 +183,8 @@ Switches en Routers moeten worden opgezet om alle logs naar de siem te versturen
 # Hoe OVA up to date houden? 
 
 Er wordt een ansible file geschreven die controleert of we de meest recente versie van de SIEM hebben, bij een outdated versie pullen we de nieuwste versie en wordt deze lokaal binnengehaald. De OVA wordt dan gedeployed en alle ansible scripts die nodig zijn om het netwerk correcct in te stellen worden uitgevoerd.
+
+
 # Bronnen
 ### wazuh
 https://wazuh.com/
