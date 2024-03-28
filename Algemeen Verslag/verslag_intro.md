@@ -180,10 +180,11 @@ Of elke switch en router wordt manueel ingesteld om zijn logs te sturen naar de 
 Switches en Routers moeten worden opgezet om alle logs naar de siem te versturen. Als we het netwerk monitoren met Zeek, dan zal deze alle syslogs loggen ookal waren deze niet voor deze SIEM bedoelt.
 
 
-# Hoe OVA up to date houden? 
+# Hoe OVA up to date houden en uitrollen? 
 
 Er wordt een ansible file geschreven die controleert of we de meest recente versie van de SIEM hebben, bij een outdated versie pullen we de nieuwste versie en wordt deze lokaal binnengehaald. De OVA wordt dan gedeployed en alle ansible scripts die nodig zijn om het netwerk correcct in te stellen worden uitgevoerd.
 
+In Proxmox wordt er dan een OVA gemaakt van de VM met een statisch IP en verschillende instellingen. Deze OVA kan dan gedeployed worden in het netwerk waarbij alle instellingen juist zullen staan.
 
 # Bronnen
 ### wazuh
