@@ -1,0 +1,42 @@
+# Playbook die een SSH-only gerbuiker aannmaakt op de andere machine
+---
+- hosts: onions
+  become: yes
+  vars_files: 
+    - ssh_vars.yaml
+
+  tasks: 
+    - name: Gebruiker aanmaken
+      user:
+        name: "{{ nieuwe_user }}"
+        state: present
+        create_home: yes
+
+    - name: SSH directory aanmaken
+      file: 
+        path: "/home/{{ nieuwe_user }}/.ssh"
+        state: directory
+        owner: "{{ nieuwe_user }}"
+        group: "{{ nieuwe_user }}"
+        mode: "0700"
+
+    - name: Onze public key toelaten
+      authorized_key:
+        user: "{{ nieuwe_user }}"
+        key: "{{ lookup('file', ssh_public_key) }}"
+        state: present
+
+    - name: Geen wachtwoorden toelaten bij SSH connecties voor de nieuwe gerbuiker
+      lineinfile: 
+        path: /etc/ssh/sshd_config
+        regexp: '^{{ item.regexp }}'
+        line: "{{ item.line }}" 
+        state: present
+      with_items:
+        - { regexp: '^PermitRootLogin', line: 'PermitRootLogin prohibit-password' }
+        - { regexp: '^PasswordAuthentication', line: 'PasswordAuthentication no' }
+
+    - name: SSH service opnieuw opstarten
+      service: 
+        name: sshd
+        state: restarted
