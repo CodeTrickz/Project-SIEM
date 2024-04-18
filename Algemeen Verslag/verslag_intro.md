@@ -100,7 +100,7 @@ Voorzie een PC of VM met voldoende resources.
 
 # Problemen 
 ## SOC dashboard was onbereikbaar.
-Het was onmogelijk om de via jumphost het dashboard van de Security Onion Console (SOC) te bereiken zelfs met local portfowards. Er gingen twee zaken fout de firewall van Security Onion liet niet toe dat er verkeer werd gestuurd naar het dashboard. Nadat deze werd afgezet kon er enkel de homepage van nginx bereikt worden terwijl de de nginx normaliter zou moeten redirecten naar de SOC. Dit komt door een redict die gebeurd in de nginx container zelf , deze redirect verwijst naar het IP van de host en niet de localforward. Hierdoor is de SOC enkel bereikbaar vanbinnen in het netwerk waarin de SOC is gedeployed.  
+Het was onmogelijk om de via jumphost het dashboard van de Security Onion Console (SOC) te bereiken zelfs met local portfowards. Er gingen twee zaken fout de firewall van Security Onion liet niet toe dat er verkeer werd gestuurd naar het dashboard. Nadat deze werd afgezet kon er enkel de homepage van nginx bereikt worden terwijl de de nginx normaliter zou moeten redirecten naar de SOC. Dit komt door een redirect die gebeurd in de nginx container zelf , deze redirect verwijst naar het IP van de host en niet de localforward. Hierdoor is de SOC enkel bereikbaar vanbinnen in het netwerk waarin de SOC is gedeployed.  
 
 Als test is er rechtstreeks gesurft naar het IP van de SOC op het bletchley netwerk zonder gebruik maken van de jumphost. Hier werkt de redirect naar het SOC dashboard naar behoren. Zo hebben we kunnen besluiten dat de SOC enkel bereikbaar vanaf het intern netwerk. 
 
@@ -192,17 +192,24 @@ In Proxmox wordt er dan een OVA gemaakt van de VM met een statisch IP en verschi
 # Bronnen
 ### wazuh
 https://wazuh.com/
+
 ### Security Onion
 https://securityonionsolutions.com/
+https://docs.securityonion.net/en/2.4/
+
 ### OSSIM
 https://cybersecurity.att.com/
+
 ### Graylog
 https://graylog.org/
+
 ### Syslog
 https://www.cisco.com/c/en/us/td/docs/switches/metro/me1200/controller/guide/b_nid_controller_book/b_nid_controller_book_chapter_010101.pdf 
+
 ### Osquery
 https://fleetdm.com/guides/osquery-a-tool-to-easily-ask-questions-about-operating-systems
 https://docs.securityonion.net/en/2.3/osquery.html
+
 ### FleetDM
 https://fleetdm.com/docs/using-fleet/learn-how-to-use-fleet
 https://medium.com/@itdanny/security-onion-part-2-tools-1cd95e350811
