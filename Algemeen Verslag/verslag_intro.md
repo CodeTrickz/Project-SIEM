@@ -1,7 +1,7 @@
 # Werking van de SIEM
 
 ## SIEM schema
-![alt text for screen readers](SIEM2.png)
+![alt text for screen readers](SIEM3.png)
 
 ### Monitoring
 #### Monitoring van infrastructuur via SNMP (CheckMK)
