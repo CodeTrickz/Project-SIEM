@@ -11,11 +11,11 @@ Het Opzetten van CheckMK zal gebeuren door het monitoring team.
 
 ### Vulnerability Assesment
 #### Vulnerability Scanner (OpenVAS)
-Voor Vunerability Scanner zal er OpenVAS gebruikt worden. Deze zal doormiddel van automatisch scans kwetsbaarheden vastleggen in de infrastructuur en indien nodig het systeem alarmeren. De data van deze scanner zal worden geanalyseerd worden in de SIEM. Het formaat van deze data is standaard XML maar kan ook worden geconverteerd naar een JSON. 
+Voor Vunerability Scanner zal er OpenVAS gebruikt worden. Deze zal doormiddel van automatisch scans kwetsbaarheden vastleggen in de infrastructuur en indien nodig het systeem alarmeren. De data van deze scanner zal worden geanalyseerd worden in de SIEM. Het data formaat van OpenVAS is standaard XML maar kan ook worden geconverteerd naar een JSON. 
 
 Hiervoor zal het Vulnerability Assesment team verantwoordelijk zijn.
 
-#### IDS (Snort/Suricata)
+#### IDS (Suricata)
 
 ### Inventory
 De Inventory zal een lijst zijn met bijhorende configuratie zijn voor een goede werking over SNMP te garanderen. Deze lijst zal opgesteld worden door het Alerting team. 
@@ -148,7 +148,7 @@ De beste keuze zou Security Onion zijn voor dit project. De SIEM heeft grote set
 Indien het niet mogelijk is om deze resources vrij te maken zal de keuze eerder vallen op wazuh. Deze SIEM-oplossing zeker een goed alternatief voor Security Onion. Maar dan is het ook zeer belangrijk om te controleren waar deze SIEM te kortkoming heeft en deze op te lossen zijn. 
 
 
-# Hoe mobile clients controleren? (EDR) 
+## Hoe mobile clients controleren? (EDR) 
 Bij EDR gaan we gebruik maken van Osquery, deze wordt door zowel wazuh als security onion ondersteund. Wazuh heeft een ingebouwde osquery module voor de wazuh agents. Die staat toe de Osquery in te stellen en data te verzamelen die gegenereerd is door de Osquery en deze dan door te sturen naar de manager.
 
 Bij security onion wordt er gebruik gemaakt van FleetDM. FleetDM is een opensource tool die wordt gebruikt als een centraal management platform gebruikt voor Osquery.
@@ -180,11 +180,14 @@ Of elke switch en router wordt manueel ingesteld om zijn logs te sturen naar de 
 Switches en Routers moeten worden opgezet om alle logs naar de siem te versturen. Als we het netwerk monitoren met Zeek, dan zal deze alle syslogs loggen ookal waren deze niet voor deze SIEM bedoelt.
 
 
-# Hoe OVA up to date houden en uitrollen? 
+## Hoe OVA up to date houden en uitrollen? 
 
 Er wordt een ansible file geschreven die controleert of we de meest recente versie van de SIEM hebben, bij een outdated versie pullen we de nieuwste versie en wordt deze lokaal binnengehaald. De OVA wordt dan gedeployed en alle ansible scripts die nodig zijn om het netwerk correcct in te stellen worden uitgevoerd.
 
 In Proxmox wordt er dan een OVA gemaakt van de VM met een statisch IP en verschillende instellingen. Deze OVA kan dan gedeployed worden in het netwerk waarbij alle instellingen juist zullen staan.
+
+## Hoe halen de agents data op , via welk protocol? 
+
 
 # Bronnen
 ### wazuh
