@@ -7,5 +7,7 @@ Ook is het aangeraden op een geschikte hostname te kiezen voor het apparaat , wa
 Naast het installeren van de agents op elke gewenste host , is het ook belangrijk om de firewall rules van de SIEM goed te zetten. 
 Doe je dit niet dan zal de agent niet bereikbaar zijn.
 
+## Verwijderen Van Agents
+
 ## Aanmaken en instellen van filter rules (OS-query)
 
