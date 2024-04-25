@@ -106,7 +106,12 @@ Als test is er rechtstreeks gesurft naar het IP van de SOC op het bletchley netw
 
 Aangezien wij als SIEM-team geen invloed hebben op de werking van de containers kunnen we hier vrij weinig aandoen. 
 
-# Hoofdvragen 
+## SIEM was corrupt gegaan
+Aangezien we binnen dit grote project met meerdere teams werken zijn er ook meerdere Security Onions uitgerolt. Eentje is een test Security Onion waar allerei zaken mogen fout lopen en de andere is de effectieve SIEM Security Onion die gebruikt wordt om de infrastructuur in de gaten te houden. Onderliggend zijn deze SIEMS een Linux en zijn deze ook gecloned. Door een klein foutje bij het klonen heeft DHCP de twee verschillende VM's een duplicaat IP gegeven waardoor beide SIEMS corrupt zijn gegaan en een reinstall verplicht was. 
+
+Bij deze herinstallatie is er verzekerd dat de SIEM niet meer via DHCP werkt om deze soort problemen te vermijden ook worden nu backups van voorgaande versie gemaakt. 
+
+# H oofdvragen 
 ## Welke SIEM? (alternatieven vergelijken) 
 Er zijn verschillende soorten SIEMS op markt. Sommige zijn open-source andere weer niet. Voor dit project moet de SIEM aan volgende vereisten  voldoende:
 - frequente updates
