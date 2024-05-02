@@ -111,7 +111,7 @@ Aangezien we binnen dit grote project met meerdere teams werken zijn er ook meer
 
 Bij deze herinstallatie is er verzekerd dat de SIEM niet meer via DHCP werkt om deze soort problemen te vermijden ook worden nu backups van voorgaande versie gemaakt. 
 
-# H oofdvragen 
+# Hoofdvragen 
 ## Welke SIEM? (alternatieven vergelijken) 
 Er zijn verschillende soorten SIEMS op markt. Sommige zijn open-source andere weer niet. Voor dit project moet de SIEM aan volgende vereisten  voldoende:
 - frequente updates
@@ -213,14 +213,18 @@ https://www.cisco.com/c/en/us/td/docs/switches/metro/me1200/controller/guide/b_n
 
 ### Osquery
 https://fleetdm.com/guides/osquery-a-tool-to-easily-ask-questions-about-operating-systems
+
 https://docs.securityonion.net/en/2.3/osquery.html
 
 ### FleetDM
 https://fleetdm.com/docs/using-fleet/learn-how-to-use-fleet
+
 https://medium.com/@itdanny/security-onion-part-2-tools-1cd95e350811
+
 https://docs.securityonion.net/en/2.3/fleet.html#fleet
 
 ## Elastic search
 https://www.elastic.co/guide/en/fleet/current/uninstall-elastic-agent.html
+
 https://docs.securityonion.net/en/2.4/elastic-fleet.html
 
