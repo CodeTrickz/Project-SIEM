@@ -220,7 +220,7 @@ https://fleetdm.com/docs/using-fleet/learn-how-to-use-fleet
 https://medium.com/@itdanny/security-onion-part-2-tools-1cd95e350811
 https://docs.securityonion.net/en/2.3/fleet.html#fleet
 
-
-
-
+## Elastic search
+https://www.elastic.co/guide/en/fleet/current/uninstall-elastic-agent.html
+https://docs.securityonion.net/en/2.4/elastic-fleet.html
 
