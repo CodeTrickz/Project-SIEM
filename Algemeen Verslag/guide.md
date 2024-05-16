@@ -1,4 +1,12 @@
-# Configureren van Security Onion
+# Installatie 
+
+
+----
+# Firewall
+## configuratie firewall
+
+----
+# Elastic Agents
 ## Deployen Van Agents
 Het Deployen van agents op hosts en endpoints gebeurd via een elastic agent install bestand. Voor elk Operating System bestaat er andere installer. 
 Deze installers moet je via het SOC-dashboard gedowload worden en vervolgens uitgevoerd als administrator op windows of als root op linux/MacOS. 
@@ -91,6 +99,38 @@ In Kibana bevindt zich een Fleet Server, waar alle ingezette agents en hun statu
 
 Na deze stappen is de agent niet langer actief in de Fleet Server.
 
-
+----
+# Agent Policy's 
 ## Aanmaken en instellen van filter rules (OS-query)
+
+## andere mogelijke policy's
+### pfsense
+
+### cisco
+
+
+----
+# Certificaten
+## Instellen van Certificaten
+
+----
+# ansible scripts
+
+----
+# manueel updaten
+
+----
+# SSH
+## manueel toevoegen ssh keys
+
+## ssh config
+
+----
+# Known Issue's
+
+
+
+
+
+
 
