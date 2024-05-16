@@ -122,6 +122,10 @@ Dit is het centrale management platform dat gebruikt wordt voor het bedienen van
 Ga naar agent policies, hier kunt u alle reeds aangemaakte agent policies vinden.
 ## Aanmaken windows policy
 1. Druk op Create agent policy
+![create](./afbeeldingen/create.png)
+2. Geef de gewenste naam aan de agent policy (bv: Windows policy)
+3. Onder advanced options kunt u nog een omschrijving toevoegen naar wens. De andere opties stelt u in naarmate uw toebehoren. In onze situatie hebben wij gekozen voor de default instellingen.
+![aanmaak](./afbeeldingen/voorbeeldaanmaak.png)
 
 ### pfsense
 
