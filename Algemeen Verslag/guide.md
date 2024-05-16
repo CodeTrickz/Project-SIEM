@@ -8,84 +8,83 @@ Voor de standalone installatie zijn volgende requirements nodig:
 Bovenstaande requirements zijn noodzakelijk anders zal de installatie falen. Meer resources zijn altijd wenselijk ze zullen de SIEM betere prestaties doen geven.
 
 ## installatie proces
-Onderstaande afbeeldingen zijn alle stappen die u moet doornemen om security onion succesvol te installeren. Hou rekening ermee dat het installatie proces van security onion lang kan duren en sommige instelling enkel wijzigbaar zijn met herinstallatie. 
+Onderstaande afbeeldingen tonen alle stappen die u moet doorlopen om Security Onion succesvol te installeren. Houd er rekening mee dat het installatieproces van Security Onion lang kan duren en sommige instellingen alleen wijzigbaar zijn met herinstallatie.
 
-![install1.png](./afbeeldingen/install1.png)
-Kies "yes"
+1. ![install1.png](./afbeeldingen/install1.png)
+   - Kies "yes".
 
-![install2.png](./afbeeldingen/install2.png)
-Kies "install" 
+2. ![install2.png](./afbeeldingen/install2.png)
+   - Kies "install".
 
-![install3.png](./afbeeldingen/install3.png)
-Voor verschillende doeleinden kun je hier verschillende versie van security onion kiezen. Voor deze installatie wordt standalone gekozen. 
+3. ![install3.png](./afbeeldingen/install3.png)
+   - Kies voor standalone voor deze installatie.
+   - Opmerking: Deze versie kan zelfstandig draaien in een productieomgeving en heeft de meeste features actief. Enkele features, zoals een Honeypot, zijn hier niet inbegrepen.
 
-Deze versie kan op zijn eigen draaien in productie omgeving en heeft de meeste features actief. Enkele features zoals een Honeypot zitten hier niet in.
+4. ![install4.png](./afbeeldingen/install4.png)
+   - Kies "standard".
 
-![install4.png](./afbeeldingen/install4.png)
-Kies  "standard" 
+5. ![install5.png](./afbeeldingen/install5.png)
+   - Typ "agree".
 
-![install5.png](./afbeeldingen/install5.png)
-type "agree"
+6. ![install6.png](./afbeeldingen/install6.png)
+   - Kies een FQDN voor de Security Onion-installatie. Let op: deze FQDN kan na installatie niet meer gewijzigd worden!
 
-![install6.png](./afbeeldingen/install6.png)
-Kies een FQDN voor de security onion installatie. Let op deze FQDN kan na installatie niet meer gewijzigd worden!
+7. ![install7.png](./afbeeldingen/install7.png)
+   - Deze waarschuwing verschijnt alleen als de standaard FQDN wordt gekozen. Kies "Use Anyway" indien gewenst.
 
-![install7.png](./afbeeldingen/install7.png)
-Deze waarschuwing komt enkel de default FQDN wordt gekozen. Indien je dit wenst kies "Use Anyway"
+8. ![install8.png](./afbeeldingen/install8.png)
+   - Kies een NIC voor de managementinterface.
 
-![install8.png](./afbeeldingen/install8.png)
-Kies een NIC voor als management interface.
+9. ![install9.png](./afbeeldingen/install9.png)
+   - Kies "static IP". Let op: dit IP wordt ook gebruikt in alle docker containers en is niet meer wijzigbaar!
 
-![install9.png](./afbeeldingen/install9.png)
-Kies "static IP". Let op dit ip wordt ook gebruikt in alle docker containers en is niet meer wijzigbaar! 
+10. ![install10.png](./afbeeldingen/install10.png)
+    - Kies een IP met subnetmask voor Security Onion.
 
-![install10.png](./afbeeldingen/install10.png)
-Kies een IP met subnetmask voor security Onion. 
+11. ![install11.png](./afbeeldingen/install11.png)
+    - Kies een standaard gateway.
 
-![install11.png](./afbeeldingen/install11.png)
-Kies een default gateway.
+12. ![install12.png](./afbeeldingen/install12.png)
+    - Kies één of meerdere DNS-servers die Security Onion moet gebruiken.
 
-![install12.png](./afbeeldingen/install12.png)
-Kies één of meerdere DNS servers die security onion moet gebruiken. 
+13. ![install13.png](./afbeeldingen/install13.png)
+    - Kies een DNS-suffix die Security Onion moet gebruiken.
 
-![install13.png](./afbeeldingen/install13.png)
-Kies een DNS suffix die security onion moet gebruiken.
+14. ![install14.png](./afbeeldingen/install14.png)
+    - Kies "yes".
 
-![install14.png](./afbeeldingen/install14.png)
-Kies "yes" 
+15. ![install15.png](./afbeeldingen/install15.png)
+    - Kies "Direct" als u geen proxy wilt gebruiken.
 
-![install15.png](./afbeeldingen/install15.png)
-Kies "Direct" indien u geen proxy wenst te gebruiken.
+16. ![install16.png](./afbeeldingen/install16.png)
+    - Kies een e-mailadres dat als root account wordt aangemaakt voor het Security Onion-dashboard en Kibana. Dit hoeft geen bestaand e-mailadres te zijn. Let op: het rootaccount kan niet gewijzigd worden!
 
-![install16.png](./afbeeldingen/install16.png)
-Kies een email adres die als root accout wordt aangemaakt voor security onion dashboard en Kibana. Dit moet geen bestaande email zijn. Let op de root account kan niet gewijzigd worden!
+17. ![install17.png](./afbeeldingen/install17.png)
+    - Kies een wachtwoord voor het rootaccount.
 
-![install17.png](./afbeeldingen/install17.png)
-Kies een wachtwoord voor het root account. 
+18. ![install18.png](./afbeeldingen/install18.png)
+    - Bevestig het wachtwoord voor het rootaccount.
 
-![install18.png](./afbeeldingen/install18.png)
-Bevestig het wachtwoord voor het root account.
+19. ![install19.png](./afbeeldingen/install19.png)
+    - Kies hoe u Security Onion wilt bereiken. Let op: als u 'hostname' kiest, moet er een DNS-server zijn die het IP van Security Onion kan vertalen. Security Onion moet ook deze DNS-server ingesteld hebben!
 
-![install19.png](./afbeeldingen/install19.png)
-Kies hoe je het security onion wilt bereiken. Let op indien u hostname kiest moet er een DNS server bestaan die het IP van Security Onion kan vertalen. Security Onion moet ook deze DNS server ingesteld hebben staan!
+20. ![install20.png](./afbeeldingen/install20.png)
+    - Kies "yes".
 
-![install20.png](./afbeeldingen/install20.png)
-Kies "yes"
+21. ![install21.png](./afbeeldingen/install21.png)
+    - Kies een IP-range die toegang heeft tot het Security Onion-dashboard. Kies 0.0.0.0/0 als elk IP-adres toegang mag hebben tot dit dashboard.
 
-![install21.png](./afbeeldingen/install21.png)
-Kies een IP range die aan het security onion dashboard mag geraken. Kies 0.0.0.0/0 als eender welk IP mag connecteren naar dit dashboard. 
+22. ![install25.png](./afbeeldingen/install25.png)
+    - Controleer de samenvatting en kies "OK".
 
-![install25.png](./afbeeldingen/install25.png)
-kijk de samenvatting na en kies "OK".
+23. ![install22.png](./afbeeldingen/install22.png)
+    - Kies "OK".
 
-![install22.png](./afbeeldingen/install22.png)
-Kies "ok"
+24. ![install23.png](./afbeeldingen/install23.png)
+    - Navigeer naar het gekozen IP/hostname via de browser. Log in met het aangemaakte rootaccount.
 
-![install23.png](./afbeeldingen/install23.png)
-Navigeer naar het IP/hostname dat gekozen werd via de browser. Log in met het aangemaakte root account.
-
-![install24.png](./afbeeldingen/install24.png)
-Na login zou je bovenstaand scherm moeten bekomen als de installatie succesvol is geslaagd. 
+25. ![install24.png](./afbeeldingen/install24.png)
+    - Als de installatie succesvol is, zou u het bovenstaande scherm moeten zien na het inloggen.
 
 
 
@@ -93,7 +92,9 @@ Na login zou je bovenstaand scherm moeten bekomen als de installatie succesvol i
 
 ----
 # Firewall
-## configuratie firewall
+## configuratie firewall terminal
+
+## configuratie firewall Security Onion Dashboard
 
 ----
 # Elastic Agents
