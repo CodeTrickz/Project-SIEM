@@ -3,6 +3,7 @@
 Het Deployen van agents op hosts en endpoints gebeurd via een elastic agent install bestand. Voor elk Operating System bestaat er andere installer. 
 Deze installers moet je via het SOC-dashboard gedowload worden en vervolgens uitgevoerd als administrator op windows of als root op linux/MacOS. 
 Ook is het aangeraden op een geschikte hostname te kiezen voor het apparaat , want de agent gebruikt de hostname van de host als naam in de SIEM. 
+De installatie kan Zowel manueel als automatisch , de automatische install gebeurd via ansible.
 
 Naast het installeren van de agents op elke gewenste host , is het ook belangrijk om de firewall rules van de SIEM goed te zetten. 
 Doe je dit niet dan zal de agent niet bereikbaar zijn.
@@ -80,6 +81,15 @@ Hier zijn de stappen voor het verwijderen van Elastic Agent op macOS met behulp 
    ```
 
 3. Voer je beheerderswachtwoord in wanneer daarom wordt gevraagd (let op: je ziet mogelijk geen tekens terwijl je het wachtwoord invoert, maar het wordt wel geregistreerd).
+
+## Verwijderen van agents uit Fleet
+In Kibana bevindt zich een Fleet Server, waar alle ingezette agents en hun status worden weergegeven. Je kunt hier naartoe navigeren via het Security Onion-dashboard en vervolgens op "Elastic Fleet" klikken. Als je agents in Fleet hebt die niet langer actief moeten zijn, volg dan deze eenvoudige stappen:
+
+1. Ga naar de agent die je wilt stoppen.
+2. Klik op de drie bolletjes om de instellingen van de agent te openen.
+3. Kies "Unenroll agent".
+
+Na deze stappen is de agent niet langer actief in de Fleet Server.
 
 
 ## Aanmaken en instellen van filter rules (OS-query)
