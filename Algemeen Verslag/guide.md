@@ -3,7 +3,7 @@ Security onion biedt meerdere installaties , in deze installatie wordt enkel sec
 
 ## Hardware requirements
 Voor de standalone installatie zijn volgende requirements nodig: 
-![requirements.png](./afbeelingen/requirements.png)
+![requirements.png](./afbeeldingen/requirements.png)
 
 Bovenstaande requirements zijn noodzakelijk anders zal de installatie falen. Meer resources zijn altijd wenselijk ze zullen de SIEM betere prestaties doen geven.
 
