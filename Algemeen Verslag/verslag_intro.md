@@ -1,7 +1,7 @@
 # Werking van de SIEM
 
 ## SIEM schema
-![alt text for screen readers](SIEM3.png)
+![alt text for screen readers](./afbeelingen/SIEM3.png)
 
 ### Monitoring
 #### Monitoring van infrastructuur via SNMP (CheckMK)
@@ -78,7 +78,7 @@ Nadat je de query's hebt opgesteld in het FleetDM-dashboard en deze hebt toegewe
 De resultaten van de uitgevoerde query's worden gepresenteerd in het FleetDM-dashboard. Je kunt verschillende weergaven gebruiken, zoals tabellen, grafieken of grafieken om de data te visualiseren.
 
 Kijk het gegeven voorbeeld : 
-![alt text for screen readers](fleetMD_dashboard.png)
+![alt text for screen readers](./afbeelingen/fleetMD_dashboard.png)
 
 Dit dashboard zal later worden geïntgreerd in een algemeen dashboard opgesteld door het dashboard team. 
 
