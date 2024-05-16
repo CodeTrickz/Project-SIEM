@@ -110,10 +110,19 @@ In Kibana bevindt zich een Fleet Server, waar alle ingezette agents en hun statu
 Na deze stappen is de agent niet langer actief in de Fleet Server.
 
 ----
-# Agent Policy's 
-## Aanmaken en instellen van filter rules (OS-query)
+# Agent Policy's
+Een policy is een soort standaard met regels die je kunt toevoegen aan Elastic Agents die geïnstalleerd zijn op de end-points binnen een netwerkomgeving. 
+De policy bepaalt welke gegevens de agent zal verzamelen en zal terugsturen naar het centraal management platform. 
+Elke Elastic agent policy heeft een set van integrations. Deze integrations bepalen welke data er zal worden opgehaald uit elke Elastic agent.
 
-## andere mogelijke policy's
+## Aanmaken en instellen van Elastic Agent Policies
+Op het security onion dashboard, druk op het navigatiemenu aan de linkerzijde. Onder tools druk op ‘Elastic Fleet’. Dit zal je rechtstreeks brengen naar de Elastic Fleet.
+
+Dit is het centrale management platform dat gebruikt wordt voor het bedienen van de Elastic agents. Op het scherm zijn hier alle agents te zien die in het netwerk zijn geïnstalleerd. 
+Ga naar agent policies, hier kunt u alle reeds aangemaakte agent policies vinden.
+## Aanmaken windows policy
+1. Druk op Create agent policy
+
 ### pfsense
 
 ### cisco
