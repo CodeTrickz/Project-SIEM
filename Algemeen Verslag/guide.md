@@ -8,6 +8,58 @@ Voor de standalone installatie zijn volgende requirements nodig:
 Bovenstaande requirements zijn noodzakelijk anders zal de installatie falen. Meer resources zijn altijd wenselijk ze zullen de SIEM betere prestaties doen geven.
 
 ## installatie proces
+Onderstaande afbeeldingen zijn alle stappen die u moet doornemen om security onion succesvol te installeren. Hou rekening ermee dat het installatie proces van security onion lang kan duren en sommige instelling enkel wijzigbaar zijn met herinstallatie. 
+
+![install1.png](./afbeeldingen/install1.png)
+
+![install2.png](./afbeeldingen/install2.png)
+
+![install3.png](./afbeeldingen/install3.png)
+
+![install4.png](./afbeeldingen/install4.png)
+
+![install5.png](./afbeeldingen/install5.png)
+
+![install6.png](./afbeeldingen/install6.png)
+
+![install7.png](./afbeeldingen/install7.png)
+
+![install8.png](./afbeeldingen/install8.png)
+
+![install9.png](./afbeeldingen/install9.png)
+
+![install10.png](./afbeeldingen/install10.png)
+
+![install11.png](./afbeeldingen/install11.png)
+
+![install12.png](./afbeeldingen/install12.png)
+
+![install13.png](./afbeeldingen/install13.png)
+
+![install14.png](./afbeeldingen/install14.png)
+
+![install15.png](./afbeeldingen/install15.png)
+
+![install16.png](./afbeeldingen/install16.png)
+
+![install17.png](./afbeeldingen/install17.png)
+
+![install18.png](./afbeeldingen/install18.png)
+
+![install19.png](./afbeeldingen/install19.png)
+
+![install20.png](./afbeeldingen/install20.png)
+
+![install21.png](./afbeeldingen/install21.png)
+
+![install22.png](./afbeeldingen/install22.png)
+
+![install23.png](./afbeeldingen/install23.png)
+
+![install24.png](./afbeeldingen/install24.png)
+
+
+
 
 
 
