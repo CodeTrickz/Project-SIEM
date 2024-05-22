@@ -223,6 +223,7 @@ Nu is het tijd om over te gaan naar de volgende stap, het toevoegen van de integ
 ![w3](./afbeeldingen/windowsint3.png)
 8.	Verder kunt u de integration nog instellen naar keuze. Voor ons voldoen de standaard instellingen.
 9.	Kies op welke Agent policy u de integration wilt toevoegen. In dit geval de Windows policy.
+![w4](./afbeeldingen/windowsint4.png)
 10. Save and continue.
 
 
