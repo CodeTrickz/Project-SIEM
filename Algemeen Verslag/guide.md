@@ -104,8 +104,37 @@ Onderstaande afbeeldingen tonen alle stappen die u moet doorlopen om Security On
 ----
 # Firewall
 ## configuratie firewall terminal
+Tijdens de installatie van Security Onion heeft Docker in IP-tables een aantal firewallregels aangemaakt. Aan deze regels moet niets aangepast worden. Echter is er ook een firewalld-service aanwezig op de Security Onion waarin de regels van IP-tables niet aanwezig zijn die standaard actief is. Dit kan voor problemen zorgen daarom wordt deze service best gestopt en gedisabled.
+
+### Commando's
+
+```bash
+# Stop de firewalld-service
+sudo systemctl stop firewalld
+
+# Schakel de firewalld-service uit zodat deze niet opnieuw start bij een reboot
+sudo systemctl disable firewalld
 
 ## configuratie firewall Security Onion Dashboard
+Bij Het Security Onion Dashboard is er wel bijkomende firewall configuratie nodig indien je wenst dat bepaalde docker containers instaat zijn om te communiceren met de SIEM. Default staat dit op een deny-all. 
+
+1. Ga naar Administration.
+2. Klik op Configuration.
+3. Zoek firewall in de lijst en open de opties.
+4. Open de optie hostgroups.
+5. Zoek de functie waarvan je de firewall rules wilt wijzigen.
+6. Klik op deze functie.
+7. Vul Het IP of IP-range in die toegang mogen hebben tot deze functie. 
+   - Indien de IP-range niet gekend is of eender welk IP aan deze functie mag vul 0.0.0.0/0 in.
+   - Let op bij een IP-range moet het submask worden ingevuld in prefix-notatie zoals bijvoorbeeld /24.
+8. Druk op het vinkje om de configuratie op te slaan. 
+
+Bij onderstaande afbeelding wordt de firewall configuratie aangepast van elastic agents.
+![firewall.png](./afbeeldingen/firewall.png)
+
+
+
+
 
 ----
 # Elastic Agents
