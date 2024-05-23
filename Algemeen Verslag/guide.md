@@ -238,7 +238,23 @@ Aangekomen bij de instellingen van de integration, zul je een ‘Channel name’
 Wij hebben gekozen voor de logs van de Windows powershell op te vragen. Verder volg de stappen zoals hier boven aangegeven om de integration toe te voegen.
 Echter is het mogelijk bij deze integration channels te blijven toevoegen. Volg de stappen exact hetzelfde als hierboven om extra channels toe te voegen naar keuzen.
 
-### pfsense
+## PFsense integration
+De volgende integration gaan we toevoegen op een alternatieve manier. Bij het toevoegen van de integrations aan de Windows policy werd de integration direct toegevoegd via de policy. Nu gaan we dit bekijken via een andere manier.
+1.	Op het Kibana dashboard druk Add integrations.
+![pf1](./afbeeldingen/pfint1)
+2.	Zoek de gewenste integration, in dit geval pfsense integration.
+![pf2](./afbeeldingen/pfint2)
+3.	Add Pfsense.
+![pf3](./afbeeldingen/pfint3)
+4.	Geef gewenste naam en omschrijving.
+5.	Onder collect pfSense logs (input: udp). Verander Syslog Host van `localhost` naar `0.0.0.0`
+![pf4](./afbeeldingen/pfint4)
+6.	Voeg de integration toe aan de `so-grid-nodes_general` policy. Dit is de standaard policy die bij aanmaak van security onion mee wordt aangemaakt.
+![pf5](./afbeeldingen/pfint44)
+7.	Save and continue.
+
+## PFsense configuratie
+Voor het te laten werken van de Pfsense integration zullen er nog enkele dingen moeten worden aangepast in de Pfsense firewall.
 
 ### cisco
 
