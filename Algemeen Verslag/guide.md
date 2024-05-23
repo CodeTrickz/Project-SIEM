@@ -206,30 +206,37 @@ Op het security onion dashboard, druk op het navigatiemenu aan de linkerzijde. O
 Dit is het centrale management platform dat gebruikt wordt voor het bedienen van de Elastic agents. Op het scherm zijn hier alle agents te zien die in het netwerk zijn geïnstalleerd. 
 Ga naar agent policies, hier kunt u alle reeds aangemaakte agent policies vinden.
 
-1. Druk op Create agent policy.
+   1. Druk op Create agent policy.
 ![create](./afbeeldingen/create.png)
-2. Geef de gewenste naam aan de agent policy (bv: Windows policy, Linux policy,etc..).
-3. Onder advanced options kunt u nog een omschrijving toevoegen naar wens. De andere opties stelt u in naarmate uw toebehoren. In onze situatie hebben wij gekozen voor de default instellingen.
+   2. Geef de gewenste naam aan de agent policy (bv: Windows policy, Linux policy,etc..).
+   3. Onder advanced options kunt u nog een omschrijving toevoegen naar wens. De andere opties stelt u in naarmate uw toebehoren. In onze situatie hebben wij gekozen voor de default instellingen.
 ![aanmaak](./afbeeldingen/voorbeeldaanmaak.png)
 Op deze moment heb jij jou eigen Elastic agent policy aangemaakt. Proficiat!
 Nu is het tijd om over te gaan naar de volgende stap, het toevoegen van de integrations. Zoals al eerder aangehaald hierboven zullen de integrations bepalen welke data jou policy zal ophalen.
 ## Windows policy integrations
-1. Selecteer jou policy waar je integrations aan wilt toevoegen. In dit geval de Windows policy.
-2. Druk aan de rechterkant van de pagina op Add integration.
+   1. Selecteer jou policy waar je integrations aan wilt toevoegen. In dit geval de Windows policy.
+   2. Druk aan de rechterkant van de pagina op Add integration.
 ![add](./afbeeldingen/addint1.png)
-3.	Op deze pagina kunt u alle geïnstalleerde integrations vinden. In de zoekbalk kunt u specifieke integrations opzoeken naar keuzen.
+   3.	Op deze pagina kunt u alle geïnstalleerde integrations vinden. In de zoekbalk kunt u specifieke integrations opzoeken naar keuzen.
 ![w1](./afbeeldingen/windowsint1.png)
-4.	In dit geval hebben wij gekozen voor de standaard Windows integration en de Custom Windows Event Logs. De laatste integration geeft de keuze om nog extra eigen inbreng te geven.
-5.	Selecteer de Windows integration.
-6.	Selecteer Add Windows.
+   4.	In dit geval hebben wij gekozen voor de standaard Windows integration en de Custom Windows Event Logs. De laatste integration geeft de keuze om nog extra eigen inbreng te geven.
+   5.	Selecteer de Windows integration.
+   6.	Selecteer Add Windows.
 ![w2](./afbeeldingen/windowsint2.png)
-7. Geef een gepaste naam en omschrijving.
+   7. Geef een gepaste naam en omschrijving.
 ![w3](./afbeeldingen/windowsint3.png)
-8.	Verder kunt u de integration nog instellen naar keuze. Voor ons voldoen de standaard instellingen.
-9.	Kies op welke Agent policy u de integration wilt toevoegen. In dit geval de Windows policy.
+   8.	Verder kunt u de integration nog instellen naar keuze. Voor ons voldoen de standaard instellingen.
+   9.	Kies op welke Agent policy u de integration wilt toevoegen. In dit geval de Windows policy.
 ![w4](./afbeeldingen/windowsint4.png)
-10. Save and continue.
+   10. Save and continue.
 
+Nu is de eerste Windows integration toegevoegd aan de policy. De volgende integration die toegevoegd gaat worden is de Custom Windows Event Logs integration. Deze integration staat toe om te laten kiezen welke Windows Event logs er zullen worden opgehaald. 
+Volg dezelfde stappen als hier boven.
+
+Aangekomen bij de instellingen van de integration, zul je een ‘Channel name’ moeten opgeven. Dit zal bepalen welke Windows Event logs er zullen worden opgehaald. 
+![w5](./afbeeldingen/windowsint5.png)
+Wij hebben gekozen voor de logs van de Windows powershell op te vragen. Verder volg de stappen zoals hier boven aangegeven om de integration toe te voegen.
+Echter is het mogelijk bij deze integration channels te blijven toevoegen. Volg de stappen exact hetzelfde als hierboven om extra channels toe te voegen naar keuzen.
 
 ### pfsense
 
