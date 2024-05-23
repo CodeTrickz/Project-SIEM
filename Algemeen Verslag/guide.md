@@ -1,5 +1,12 @@
 # Installatie 
-Security onion biedt meerdere installaties , in deze installatie wordt enkel security onion standalone besproken. Heb je interresse in een andere installatie van security dan kun je meer informatie vinden op [Security Onion installaties ] (https://docs.securityonion.net/en/2.4/architecture.html).
+Security onion biedt meerdere installaties , in deze installatie wordt enkel security onion standalone besproken. Heb je interresse in een andere installatie van security dan kun je meer informatie vinden op 
+
+` Security Onion installaties  (https://docs.securityonion.net/en/2.4/architecture.html)`
+
+`PFsense configuratie (https://docs.securityonion.net/en/2.4/pfsense.html)`
+
+`Elastic agent policy (https://www.elastic.co/guide/en/fleet/current/agent-policy.html)`
+
 
 ## Hardware requirements
 Voor de standalone installatie zijn volgende requirements nodig: 
@@ -256,7 +263,7 @@ De volgende integration gaan we toevoegen op een alternatieve manier. Bij het to
 ![pf5](./afbeeldingen/pfint44.png)
 7.	Save and continue.
 
-## PFsense configuratie
+### PFsense configuratie
 Voor het te laten werken van de Pfsense integration zullen er nog enkele dingen moeten worden aangepast in de Pfsense firewall.
 1.	Navigeer naar status &#8594; System logs, druk op settings
 ![pf](./afbeeldingen/pfint5.png)
@@ -265,7 +272,7 @@ Voor het te laten werken van de Pfsense integration zullen er nog enkele dingen 
 4.	Onder `Remote log servers` voer het IP van de security onion en poort 9001. De Elastic integration verwacht standaard dat de Pfsense logs op poort 9001.
 5.	Onder `Remote Syslog Contents`selecteer de logs die je wilt forwarden naar de agent. Selecteer Everything.
 ![pf](./afbeeldingen/pfint6.png)
-## Security onion configuratie
+### Security onion configuratie
 Vervolgens zal het verkeer van de pfsense moeten worden toegelaten op `poort 9001`.
 1.	Ga naar Administration &#8594; Configuration
 2.	Vanboven aan de pagina druk op de `options` menu en enable de `Show all configurable settings, including advanced settings.` optie.
