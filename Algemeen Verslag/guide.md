@@ -36,55 +36,59 @@ Onderstaande afbeeldingen tonen alle stappen die u moet doorlopen om Security On
    - Kies een NIC voor de managementinterface.
 
 ![install9.png](./afbeeldingen/install9.png)
-   - Kies "static IP". Let op: dit IP wordt ook gebruikt in alle docker containers en is niet meer wijzigbaar!
+   - Kies "static IP".
+   - Let op: dit IP wordt ook gebruikt in alle docker containers en is niet meer wijzigbaar!
 
 ![install10.png](./afbeeldingen/install10.png)
-    - Kies een IP met subnetmask voor Security Onion.
+   - Kies een IP met subnetmask voor Security Onion.
+     
 
 ![install11.png](./afbeeldingen/install11.png)
-    - Kies een standaard gateway.
+   - Kies een standaard gateway.
 
 ![install12.png](./afbeeldingen/install12.png)
-    - Kies één of meerdere DNS-servers die Security Onion moet gebruiken.
+   - Kies één of meerdere DNS-servers die Security Onion moet gebruiken.
 
 ![install13.png](./afbeeldingen/install13.png)
-    - Kies een DNS-suffix die Security Onion moet gebruiken.
+   - Kies een DNS-suffix die Security Onion moet gebruiken.
 
 ![install14.png](./afbeeldingen/install14.png)
-    - Kies "yes".
+   - Kies "yes".
 
 ![install15.png](./afbeeldingen/install15.png)
-    - Kies "Direct" als u geen proxy wilt gebruiken.
+   - Kies "Direct" als u geen proxy wilt gebruiken.
 
-![install16.png](./afbeeldingen/install16.png)
-    - Kies een e-mailadres dat als root account wordt aangemaakt voor het Security Onion-dashboard en Kibana. Dit hoeft geen bestaand e-mailadres te zijn. Let op: het rootaccount kan niet gewijzigd worden!
+![install16.png](./afbeeldingen/install16.png) 
+   - Kies een e-mailadres dat als root account wordt aangemaakt voor het Security Onion-dashboard en Kibana.
+   - Dit hoeft geen bestaand e-mailadres te zijn. Let op: het rootaccount kan niet gewijzigd worden!
 
 ![install17.png](./afbeeldingen/install17.png)
-    - Kies een wachtwoord voor het rootaccount.
+   - Kies een wachtwoord voor het rootaccount.
 
 ![install18.png](./afbeeldingen/install18.png)
-    - Bevestig het wachtwoord voor het rootaccount.
+   - Bevestig het wachtwoord voor het rootaccount.
 
 ![install19.png](./afbeeldingen/install19.png)
-    - Kies hoe u Security Onion wilt bereiken. Let op: als u 'hostname' kiest, moet er een DNS-server zijn die het IP van Security Onion kan vertalen. Security Onion moet ook deze DNS-server ingesteld hebben!
+   - Kies hoe u Security Onion wilt bereiken.
+   - Let op: als u 'hostname' kiest, moet er een DNS-server zijn die het IP van Security Onion kan vertalen. Security Onion moet ook deze DNS-server ingesteld hebben!
 
 ![install20.png](./afbeeldingen/install20.png)
-    - Kies "yes".
+   - Kies "yes".
 
 ![install21.png](./afbeeldingen/install21.png)
-    - Kies een IP-range die toegang heeft tot het Security Onion-dashboard. Kies 0.0.0.0/0 als elk IP-adres toegang mag hebben tot dit dashboard.
+   - Kies een IP-range die toegang heeft tot het Security Onion-dashboard. Kies 0.0.0.0/0 als elk IP-adres toegang mag hebben tot dit dashboard.
 
 ![install25.png](./afbeeldingen/install25.png)
-    - Controleer de samenvatting en kies "OK".
+   - Controleer de samenvatting en kies "OK".
 
 ![install22.png](./afbeeldingen/install22.png)
-    - Kies "OK".
+   - Kies "OK".
 
 ![install23.png](./afbeeldingen/install23.png)
-    - Navigeer naar het gekozen IP/hostname via de browser. Log in met het aangemaakte rootaccount.
+   - Navigeer naar het gekozen IP/hostname via de browser. Log in met het aangemaakte rootaccount.
 
 ![install24.png](./afbeeldingen/install24.png)
-    - Als de installatie succesvol is, zou u het bovenstaande scherm moeten zien na het inloggen.
+   - Als de installatie succesvol is, zou u het bovenstaande scherm moeten zien na het inloggen.
 
 
 
