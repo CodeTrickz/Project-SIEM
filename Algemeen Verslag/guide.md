@@ -241,20 +241,41 @@ Echter is het mogelijk bij deze integration channels te blijven toevoegen. Volg 
 ## PFsense integration
 De volgende integration gaan we toevoegen op een alternatieve manier. Bij het toevoegen van de integrations aan de Windows policy werd de integration direct toegevoegd via de policy. Nu gaan we dit bekijken via een andere manier.
 1.	Op het Kibana dashboard druk Add integrations.
-![pf1](./afbeeldingen/pfint1)
+![pf1](./afbeeldingen/pfint1.png)
 2.	Zoek de gewenste integration, in dit geval pfsense integration.
-![pf2](./afbeeldingen/pfint2)
+![pf2](./afbeeldingen/pfint2.png)
 3.	Add Pfsense.
-![pf3](./afbeeldingen/pfint3)
+![pf3](./afbeeldingen/pfint3.png)
 4.	Geef gewenste naam en omschrijving.
 5.	Onder collect pfSense logs (input: udp). Verander Syslog Host van `localhost` naar `0.0.0.0`
-![pf4](./afbeeldingen/pfint4)
+![pf4](./afbeeldingen/pfint4.png)
 6.	Voeg de integration toe aan de `so-grid-nodes_general` policy. Dit is de standaard policy die bij aanmaak van security onion mee wordt aangemaakt.
-![pf5](./afbeeldingen/pfint44)
+![pf5](./afbeeldingen/pfint44.png)
 7.	Save and continue.
 
 ## PFsense configuratie
 Voor het te laten werken van de Pfsense integration zullen er nog enkele dingen moeten worden aangepast in de Pfsense firewall.
+1.	Navigeer naar status  System logs, druk op settings
+![pf](./afbeeldingen/pfint5.png)
+2.	Beneden aan de pagina, vink aan `Enable Remote Logging`
+3.	Kies een specifieke interface voor forwarding
+4.	Onder `Remote log servers` voer het IP van de security onion en poort 9001. De Elastic integration verwacht standaard dat de Pfsense logs op poort 9001.
+5.	Onder `Remote Syslog Contents`selecteer de logs die je wilt forwarden naar de agent. Selecteer Everything.
+![pf](./afbeeldingen/pfint6.png)
+## Security onion configuratie
+Vervolgens zal het verkeer van de pfsense moeten worden toegelaten op `poort 9001`.
+1.	Ga naar Administration  Configuration
+2.	Vanboven aan de pagina druk op de `options` menu en enable de `Show all configurable settings, including advanced settings.` optie.
+![pf](./afbeeldingen/pfint7.png)
+3.	Aan de linkerkant, ga naar `Firewall`, selecteer `hostgroup`, en druk `customhostgroup0` groep. Aan de rechterkant voer het IP adres van de Pfsense firewall in.
+![pf](./afbeeldingen/pfint8.png)
+4.	Aan de linkerkant, ga naar `Firewall`, selecteer `portgroups`, selecteer de `customportgroup0` en druk op `udp`. Voor `9001`in langs de rechterkant.
+![pf](./afbeeldingen/pfint9.png)
+5.	Aan de linkerkant ga naar `Firewall`, selecteer `role` en kies het node type dat de Pfsense logs zal ontvangen. In dit geval `standalone`.
+6.	Vanaf hier Chain  INPUT  hostgroups  customhostgroup0  portgroups.
+7.	Aan de rechterkant, typ ` customgroup0`.
+![pf](./afbeeldingen/pfint10.png)
+8.	Onder het `options` menu. Druk op `SYNCHRONIZE GRID` voor de regels met onmiddellijk effect te laten ingaan.
 
 ### cisco
 
