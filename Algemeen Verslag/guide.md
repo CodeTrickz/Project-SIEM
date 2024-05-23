@@ -131,7 +131,7 @@ Bij Het Security Onion Dashboard is er wel bijkomende firewall configuratie nodi
 8. Druk op het vinkje om de configuratie op te slaan. 
 
 Bij onderstaande afbeelding wordt de firewall configuratie aangepast van elastic agents.
-![firewall.png](./afbeeldingen/firewall.png)
+![firewall.PNG](./afbeeldingen/firewall.PNG)
 
 
 
