@@ -1,18 +1,13 @@
 # Installatie 
-Security onion biedt meerdere installaties , in deze installatie wordt enkel security onion standalone besproken. Heb je interresse in een andere installatie van security dan kun je meer informatie vinden op 
-
-` Security Onion installaties  (https://docs.securityonion.net/en/2.4/architecture.html)`
-
-`PFsense configuratie (https://docs.securityonion.net/en/2.4/pfsense.html)`
-
-`Elastic agent policy (https://www.elastic.co/guide/en/fleet/current/agent-policy.html)`
-
+Security onion biedt meerdere installaties , in deze installatie wordt enkel security onion standalone besproken. Heb je interresse in een andere installatie van security dan kun je meer informatie vinden onder
+[Security Onion installaties](https://docs.securityonion.net/en/2.4/architecture.html).
 
 ## Hardware requirements
 Voor de standalone installatie zijn volgende requirements nodig: 
 ![requirements.png](./afbeeldingen/requirements.png)
 
 Bovenstaande requirements zijn noodzakelijk anders zal de installatie falen. Meer resources zijn altijd wenselijk ze zullen de SIEM betere prestaties doen geven.
+Requirements voor andere installaties hier te vinden onder [Security Onion requirements](https://docs.securityonion.net/en/latest/hardware.html).
 
 ## Installatie proces
 Onderstaande afbeeldingen tonen alle stappen die u moet doorlopen om Security Onion succesvol te installeren. Houd er rekening mee dat het installatieproces van Security Onion lang kan duren en sommige instellingen alleen wijzigbaar zijn met herinstallatie.
@@ -128,11 +123,12 @@ Bij Het Security Onion Dashboard is er wel bijkomende firewall configuratie nodi
 7. Vul Het IP of IP-range in die toegang mogen hebben tot deze functie. 
    - Indien de IP-range niet gekend is of eender welk IP aan deze functie mag vul 0.0.0.0/0 in.
    - Let op bij een IP-range moet het submask worden ingevuld in prefix-notatie zoals bijvoorbeeld /24.
-8. Druk op het vinkje om de configuratie op te slaan. 
+8. Druk op het vinkje om de configuratie op te slaan.
 
 Bij onderstaande afbeelding wordt de firewall configuratie aangepast van elastic agents.
 ![firewall.PNG](./afbeeldingen/firewall.PNG)
 
+Meer uitleg over alle firewall functies is te vinden onder [Firewall Info](https://docs.securityonion.net/en/latest/firewall.html#).
 
 
 
@@ -147,6 +143,8 @@ De installatie kan Zowel manueel als automatisch , de automatische install gebeu
 
 Naast het installeren van de agents op elke gewenste host , is het ook belangrijk om de firewall rules van de SIEM goed te zetten. 
 Doe je dit niet dan zal de agent niet bereikbaar zijn.
+
+Meer informatie omtrent Elastic agents is hier te vinden onder [Elastic agents info](https://docs.securityonion.net/en/latest/elastic-fleet.html).
 
 ## Verwijderen Van Agents
 Moest er foutieve agents zijn gedeployed op een endpoints/host , dan kun je die op onderstaande manier verwijderen. Dit wordt aangeraden aangezien de agents nogal veel resources gebruiken zelfs als ze geen connectie hebben met de SOC. 
@@ -237,7 +235,7 @@ Een policy is een soort standaard met regels die je kunt toevoegen aan Elastic A
 De policy bepaalt welke gegevens de agent zal verzamelen en zal terugsturen naar het centraal management platform. 
 Elke Elastic agent policy heeft een set van integrations. Deze integrations bepalen welke data er zal worden opgehaald uit elke Elastic agent.
 
-## Aanmaken en instellen van Elastic Agent Policies
+## Aanmaken en instellen van Elastic Agent Policies/integrations 
 Op het security onion dashboard, druk op het navigatiemenu aan de linkerzijde. Onder tools druk op ‘Elastic Fleet’. Dit zal je rechtstreeks brengen naar de Elastic Fleet.
 ![dashboard](./afbeeldingen/dashboard.png)
 Dit is het centrale management platform dat gebruikt wordt voor het bedienen van de Elastic agents. Op het scherm zijn hier alle agents te zien die in het netwerk zijn geïnstalleerd. 
@@ -276,6 +274,7 @@ Volg dezelfde stappen als hier boven.
 ![w5](./afbeeldingen/windowsint5.png)
 Wij hebben gekozen voor de logs van de Windows powershell op te vragen. Verder volg de stappen zoals hier boven aangegeven om de integration toe te voegen.
 Echter is het mogelijk bij deze integration channels te blijven toevoegen. Volg de stappen exact hetzelfde als hierboven om extra channels toe te voegen naar keuzen.
+Meer informatie omtrent policy's is te vinden onder [Elastic agent policy](https://www.elastic.co/guide/en/fleet/current/agent-policy.html). 
 
 ## PFsense integration
 De volgende integration gaan we toevoegen op een alternatieve manier. Bij het toevoegen van de integrations aan de Windows policy werd de integration direct toegevoegd via de policy. Nu gaan we dit bekijken via een andere manier.
@@ -317,6 +316,9 @@ Vervolgens zal het verkeer van de pfsense moeten worden toegelaten op `poort 900
 ![pf](./afbeeldingen/pfint10.png)
 8.	Onder het `options` menu. Druk op `SYNCHRONIZE GRID` voor de regels met onmiddellijk effect te laten ingaan.
 
+
+Meer informatie over de pfsense integration kan hier worden geraadpleegt [PFsense configuratie](https://docs.securityonion.net/en/2.4/pfsense.html).
+
 ### cisco
 
 
@@ -337,8 +339,25 @@ Vervolgens zal het verkeer van de pfsense moeten worden toegelaten op `poort 900
 ## ssh config
 
 ----
+# Dashboard Users
+## Aanmaken van Dashboard Users
+
+
+----
+# Dasboard data lezen
+## Algemene Overview
+
+## Agent data
+
+## Firewall data
+
+## andere filters
+
+----
 # Known Issue's
 
+
+----
 
 
 
