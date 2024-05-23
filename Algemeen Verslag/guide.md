@@ -215,13 +215,13 @@ Op deze moment heb jij jou eigen Elastic agent policy aangemaakt. Proficiat!
 Nu is het tijd om over te gaan naar de volgende stap, het toevoegen van de integrations. Zoals al eerder aangehaald hierboven zullen de integrations bepalen welke data jou policy zal ophalen.
 ## Windows policy integrations
    1. Selecteer jou policy waar je integrations aan wilt toevoegen. In dit geval de Windows policy.
-   2. Druk aan de rechterkant van de pagina op Add integration.
+   2. Druk aan de rechterkant van de pagina op `Add integration`.
 ![add](./afbeeldingen/addint1.png)
    3.	Op deze pagina kunt u alle geïnstalleerde integrations vinden. In de zoekbalk kunt u specifieke integrations opzoeken naar keuzen.
 ![w1](./afbeeldingen/windowsint1.png)
-   4.	In dit geval hebben wij gekozen voor de standaard Windows integration en de Custom Windows Event Logs. De laatste integration geeft de keuze om nog extra eigen inbreng te geven.
+   4.	In dit geval hebben wij gekozen voor de standaard `Windows` integration en de `Custom Windows Event Logs`. De laatste integration geeft de keuze om nog extra eigen inbreng te geven.
    5.	Selecteer de Windows integration.
-   6.	Selecteer Add Windows.
+   6.	Selecteer `Add Windows`.
 ![w2](./afbeeldingen/windowsint2.png)
    7. Geef een gepaste naam en omschrijving.
 ![w3](./afbeeldingen/windowsint3.png)
@@ -230,10 +230,12 @@ Nu is het tijd om over te gaan naar de volgende stap, het toevoegen van de integ
 ![w4](./afbeeldingen/windowsint4.png)
    10. Save and continue.
 
-Nu is de eerste Windows integration toegevoegd aan de policy. De volgende integration die toegevoegd gaat worden is de Custom Windows Event Logs integration. Deze integration staat toe om te laten kiezen welke Windows Event logs er zullen worden opgehaald. 
+Nu is de eerste Windows integration toegevoegd aan de policy.
+
+De volgende integration die toegevoegd gaat worden is de `Custom Windows Event Logs` integration. Deze integration staat toe om te laten kiezen welke Windows Event logs er zullen worden opgehaald. 
 Volg dezelfde stappen als hier boven.
 
-Aangekomen bij de instellingen van de integration, zul je een ‘Channel name’ moeten opgeven. Dit zal bepalen welke Windows Event logs er zullen worden opgehaald. 
+- Aangekomen bij de instellingen van de integration, zul je een ‘Channel name’ moeten opgeven. Dit zal bepalen welke Windows Event logs er zullen worden opgehaald. 
 ![w5](./afbeeldingen/windowsint5.png)
 Wij hebben gekozen voor de logs van de Windows powershell op te vragen. Verder volg de stappen zoals hier boven aangegeven om de integration toe te voegen.
 Echter is het mogelijk bij deze integration channels te blijven toevoegen. Volg de stappen exact hetzelfde als hierboven om extra channels toe te voegen naar keuzen.
@@ -250,12 +252,13 @@ De volgende integration gaan we toevoegen op een alternatieve manier. Bij het to
 5.	Onder collect pfSense logs (input: udp). Verander Syslog Host van `localhost` naar `0.0.0.0`
 ![pf4](./afbeeldingen/pfint4.png)
 6.	Voeg de integration toe aan de `so-grid-nodes_general` policy. Dit is de standaard policy die bij aanmaak van security onion mee wordt aangemaakt.
+
 ![pf5](./afbeeldingen/pfint44.png)
 7.	Save and continue.
 
 ## PFsense configuratie
 Voor het te laten werken van de Pfsense integration zullen er nog enkele dingen moeten worden aangepast in de Pfsense firewall.
-1.	Navigeer naar status  System logs, druk op settings
+1.	Navigeer naar status &#8594; System logs, druk op settings
 ![pf](./afbeeldingen/pfint5.png)
 2.	Beneden aan de pagina, vink aan `Enable Remote Logging`
 3.	Kies een specifieke interface voor forwarding
@@ -264,7 +267,7 @@ Voor het te laten werken van de Pfsense integration zullen er nog enkele dingen 
 ![pf](./afbeeldingen/pfint6.png)
 ## Security onion configuratie
 Vervolgens zal het verkeer van de pfsense moeten worden toegelaten op `poort 9001`.
-1.	Ga naar Administration  Configuration
+1.	Ga naar Administration &#8594; Configuration
 2.	Vanboven aan de pagina druk op de `options` menu en enable de `Show all configurable settings, including advanced settings.` optie.
 ![pf](./afbeeldingen/pfint7.png)
 3.	Aan de linkerkant, ga naar `Firewall`, selecteer `hostgroup`, en druk `customhostgroup0` groep. Aan de rechterkant voer het IP adres van de Pfsense firewall in.
@@ -272,7 +275,7 @@ Vervolgens zal het verkeer van de pfsense moeten worden toegelaten op `poort 900
 4.	Aan de linkerkant, ga naar `Firewall`, selecteer `portgroups`, selecteer de `customportgroup0` en druk op `udp`. Voor `9001`in langs de rechterkant.
 ![pf](./afbeeldingen/pfint9.png)
 5.	Aan de linkerkant ga naar `Firewall`, selecteer `role` en kies het node type dat de Pfsense logs zal ontvangen. In dit geval `standalone`.
-6.	Vanaf hier Chain  INPUT  hostgroups  customhostgroup0  portgroups.
+6.	Vanaf hier Chain &#8594; INPUT &#8594; hostgroups &#8594; customhostgroup0 &#8594; portgroups.
 7.	Aan de rechterkant, typ ` customgroup0`.
 ![pf](./afbeeldingen/pfint10.png)
 8.	Onder het `options` menu. Druk op `SYNCHRONIZE GRID` voor de regels met onmiddellijk effect te laten ingaan.
