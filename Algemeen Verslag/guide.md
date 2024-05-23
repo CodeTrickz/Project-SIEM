@@ -114,6 +114,7 @@ sudo systemctl stop firewalld
 
 # Schakel de firewalld-service uit zodat deze niet opnieuw start bij een reboot
 sudo systemctl disable firewalld
+```
 
 ## configuratie firewall Security Onion Dashboard
 Bij Het Security Onion Dashboard is er wel bijkomende firewall configuratie nodig indien je wenst dat bepaalde docker containers instaat zijn om te communiceren met de SIEM. Default staat dit op een deny-all. 
