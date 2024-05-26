@@ -1,7 +1,7 @@
 # Werking van de SIEM
 
 ## SIEM schema
-![alt text for screen readers](SIEM2.png)
+![alt text for screen readers](./afbeeldingen/SIEM3.png)
 
 ### Monitoring
 #### Monitoring van infrastructuur via SNMP (CheckMK)
@@ -11,11 +11,11 @@ Het Opzetten van CheckMK zal gebeuren door het monitoring team.
 
 ### Vulnerability Assesment
 #### Vulnerability Scanner (OpenVAS)
-Voor Vunerability Scanner zal er OpenVAS gebruikt worden. Deze zal doormiddel van automatisch scans kwetsbaarheden vastleggen in de infrastructuur en indien nodig het systeem alarmeren. De data van deze scanner zal worden geanalyseerd worden in de SIEM. Het formaat van deze data is standaard XML maar kan ook worden geconverteerd naar een JSON. 
+Voor Vunerability Scanner zal er OpenVAS gebruikt worden. Deze zal doormiddel van automatisch scans kwetsbaarheden vastleggen in de infrastructuur en indien nodig het systeem alarmeren. De data van deze scanner zal worden geanalyseerd worden in de SIEM. Het data formaat van OpenVAS is standaard XML maar kan ook worden geconverteerd naar een JSON. 
 
 Hiervoor zal het Vulnerability Assesment team verantwoordelijk zijn.
 
-#### IDS (Snort/Suricata)
+#### IDS (Suricata)
 
 ### Inventory
 De Inventory zal een lijst zijn met bijhorende configuratie zijn voor een goede werking over SNMP te garanderen. Deze lijst zal opgesteld worden door het Alerting team. 
@@ -78,7 +78,7 @@ Nadat je de query's hebt opgesteld in het FleetDM-dashboard en deze hebt toegewe
 De resultaten van de uitgevoerde query's worden gepresenteerd in het FleetDM-dashboard. Je kunt verschillende weergaven gebruiken, zoals tabellen, grafieken of grafieken om de data te visualiseren.
 
 Kijk het gegeven voorbeeld : 
-![alt text for screen readers](fleetMD_dashboard.png)
+![alt text for screen readers](./afbeeldingen/fleetMD_dashboard.png)
 
 Dit dashboard zal later worden geïntgreerd in een algemeen dashboard opgesteld door het dashboard team. 
 
@@ -100,11 +100,16 @@ Voorzie een PC of VM met voldoende resources.
 
 # Problemen 
 ## SOC dashboard was onbereikbaar.
-Het was onmogelijk om de via jumphost het dashboard van de Security Onion Console (SOC) te bereiken zelfs met local portfowards. Er gingen twee zaken fout de firewall van Security Onion liet niet toe dat er verkeer werd gestuurd naar het dashboard. Nadat deze werd afgezet kon er enkel de homepage van nginx bereikt worden terwijl de de nginx normaliter zou moeten redirecten naar de SOC. 
+Het was onmogelijk om de via jumphost het dashboard van de Security Onion Console (SOC) te bereiken zelfs met local portfowards. Er gingen twee zaken fout de firewall van Security Onion liet niet toe dat er verkeer werd gestuurd naar het dashboard. Nadat deze werd afgezet kon er enkel de homepage van nginx bereikt worden terwijl de de nginx normaliter zou moeten redirecten naar de SOC. Dit komt door een redirect die gebeurd in de nginx container zelf , deze redirect verwijst naar het IP van de host en niet de localforward. Hierdoor is de SOC enkel bereikbaar vanbinnen in het netwerk waarin de SOC is gedeployed.  
 
-Als test is er rechtstreeks gesurft naar het IP van de SOC op het bletchley netwerk zonder gebruik maken van de jumphost. Hier werkt de redirect naar het SOC dashboard naar behoren. Zo hebben we kunnen besluiten dat de jumphost of jumphost configuratie niet goed is ingesteld waardoor het dashboard onbereikbaar was. 
+Als test is er rechtstreeks gesurft naar het IP van de SOC op het bletchley netwerk zonder gebruik maken van de jumphost. Hier werkt de redirect naar het SOC dashboard naar behoren. Zo hebben we kunnen besluiten dat de SOC enkel bereikbaar vanaf het intern netwerk. 
 
-Aangezien wij als SIEM-team geen invloed hebben op de in
+Aangezien wij als SIEM-team geen invloed hebben op de werking van de containers kunnen we hier vrij weinig aandoen. 
+
+## SIEM was corrupt gegaan
+Aangezien we binnen dit grote project met meerdere teams werken zijn er ook meerdere Security Onions uitgerolt. Eentje is een test Security Onion waar allerei zaken mogen fout lopen en de andere is de effectieve SIEM Security Onion die gebruikt wordt om de infrastructuur in de gaten te houden. Onderliggend zijn deze SIEMS een Linux en zijn deze ook gecloned. Door een klein foutje bij het klonen heeft DHCP de twee verschillende VM's een duplicaat IP gegeven waardoor beide SIEMS corrupt zijn gegaan en een reinstall verplicht was. 
+
+Bij deze herinstallatie is er verzekerd dat de SIEM niet meer via DHCP werkt om deze soort problemen te vermijden ook worden nu backups van voorgaande versie gemaakt. 
 
 # Hoofdvragen 
 ## Welke SIEM? (alternatieven vergelijken) 
@@ -148,7 +153,7 @@ De beste keuze zou Security Onion zijn voor dit project. De SIEM heeft grote set
 Indien het niet mogelijk is om deze resources vrij te maken zal de keuze eerder vallen op wazuh. Deze SIEM-oplossing zeker een goed alternatief voor Security Onion. Maar dan is het ook zeer belangrijk om te controleren waar deze SIEM te kortkoming heeft en deze op te lossen zijn. 
 
 
-# Hoe mobile clients controleren? (EDR) 
+## Hoe mobile clients controleren? (EDR) 
 Bij EDR gaan we gebruik maken van Osquery, deze wordt door zowel wazuh als security onion ondersteund. Wazuh heeft een ingebouwde osquery module voor de wazuh agents. Die staat toe de Osquery in te stellen en data te verzamelen die gegenereerd is door de Osquery en deze dan door te sturen naar de manager.
 
 Bij security onion wordt er gebruik gemaakt van FleetDM. FleetDM is een opensource tool die wordt gebruikt als een centraal management platform gebruikt voor Osquery.
@@ -180,31 +185,46 @@ Of elke switch en router wordt manueel ingesteld om zijn logs te sturen naar de 
 Switches en Routers moeten worden opgezet om alle logs naar de siem te versturen. Als we het netwerk monitoren met Zeek, dan zal deze alle syslogs loggen ookal waren deze niet voor deze SIEM bedoelt.
 
 
-# Hoe OVA up to date houden? 
+## Hoe OVA up to date houden en uitrollen? 
 
 Er wordt een ansible file geschreven die controleert of we de meest recente versie van de SIEM hebben, bij een outdated versie pullen we de nieuwste versie en wordt deze lokaal binnengehaald. De OVA wordt dan gedeployed en alle ansible scripts die nodig zijn om het netwerk correcct in te stellen worden uitgevoerd.
+
+In Proxmox wordt er dan een OVA gemaakt van de VM met een statisch IP en verschillende instellingen. Deze OVA kan dan gedeployed worden in het netwerk waarbij alle instellingen juist zullen staan.
+
+## Hoe halen de agents data op , via welk protocol? 
 
 
 # Bronnen
 ### wazuh
 https://wazuh.com/
+
 ### Security Onion
 https://securityonionsolutions.com/
+https://docs.securityonion.net/en/2.4/
+
 ### OSSIM
 https://cybersecurity.att.com/
+
 ### Graylog
 https://graylog.org/
+
 ### Syslog
 https://www.cisco.com/c/en/us/td/docs/switches/metro/me1200/controller/guide/b_nid_controller_book/b_nid_controller_book_chapter_010101.pdf 
+
 ### Osquery
 https://fleetdm.com/guides/osquery-a-tool-to-easily-ask-questions-about-operating-systems
+
 https://docs.securityonion.net/en/2.3/osquery.html
+
 ### FleetDM
 https://fleetdm.com/docs/using-fleet/learn-how-to-use-fleet
+
 https://medium.com/@itdanny/security-onion-part-2-tools-1cd95e350811
+
 https://docs.securityonion.net/en/2.3/fleet.html#fleet
 
+## Elastic search
+https://www.elastic.co/guide/en/fleet/current/uninstall-elastic-agent.html
 
-
-
+https://docs.securityonion.net/en/2.4/elastic-fleet.html
 

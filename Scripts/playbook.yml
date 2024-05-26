@@ -1,0 +1,40 @@
+### Playbook die onion juist instelt voor veilig gebruik
+---
+- hosts: onions
+  become: true
+
+  tasks:
+    - name: Nieuwe user aanmaken met sudo rechten
+      ansible.builtin.user:
+        name: SecOnAdmin
+        comment: "Security Onion Admin"
+        shell: /bin/bash
+        createhome: yes
+
+    - name: 2048-bit SSH key voor de gerbuiker /.ssh/id_rsa
+      ansible.builtin.user:
+        name: SecOnAdmin
+        generate_ssh_key: yes
+        ssh_key_bits: 2048
+        ssh_key_file: .ssh/id_rsa
+
+    - name: Packages installeren
+      ansible.builtin.package:
+        name:
+          - NetworkManager
+        state: latest
+  
+    - name: Add an Ethernet connection with static IP configuration
+      community.general.nmcli:
+        conn_name: my-eth1
+        ifname: ens18
+        type: ethernet
+        ip4: 10.180.13.200/16
+        gw4: 10.180.0.1
+        state: present
+
+    - name: SSH service opnieuw opstarten
+      ansible.builtin.service:
+        name: sshd
+        state: restarted
+

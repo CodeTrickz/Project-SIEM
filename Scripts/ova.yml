@@ -1,0 +1,9 @@
+### Playbook die onion juist instelt voor veilig gebruik
+---
+- hosts: onions
+  become: true
+
+  tasks:
+    - name: VM van template deployen
+      community.general.proxmox:
+        node: 
