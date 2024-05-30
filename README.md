@@ -2,7 +2,7 @@
 ## Het SIEM team
 
 ## Groepsleden
-- Wesley Van Hoof
+- Wesley Van Hoof (CodeTrickz)
 - Dion Brovina
 - Klaas Mouws
 
