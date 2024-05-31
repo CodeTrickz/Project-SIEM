@@ -54,7 +54,7 @@ We controleren onze elastic fleet en zien daarop ook onze devices staan.
 
 
 ### Conclusie
-
+Het installeren van Elastic Agents via Intune zorgt voor een makkelijke integratie binnen een bedrijf omdat deze al vaak werken met de software. Nadat we de agents hebben geinstalleerd zullen we logs van deze devices binnenkrijgen op de Security Onion wat een administrator toelaat om verdachte activiteiten te controleren.
 
 ### Bronnen
 Ooi, E. (2023, December 15). Elastic Explained: How To Deploy Elastic Agent on Windows with Microsoft Intune. Ooi Ventures. https://ooiventures.com/elastic-explained-how-to-deploy-elastic-agent-on-windows-with-microsoft-intune/
