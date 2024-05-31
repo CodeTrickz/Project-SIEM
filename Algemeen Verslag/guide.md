@@ -141,7 +141,7 @@ Het Deployen van agents op hosts en endpoints gebeurd via een elastic agent inst
 De installatie kan zowel manueel als automatisch , de automatische install gebeurd via ansible of intune.
 
 ### Manuele installatie
-De installers moeten via het SOC-dashboard worden gedownload en vervolgens worden uitgevoerd als administrator op windows of als root op linux/MacOS. 
+De installers moeten via het SOC-dashboard (https://IP-SOC/#/downloads) worden gedownload en vervolgens worden uitgevoerd als administrator op windows of als root op linux/MacOS. 
 
 Ook is het aangeraden om een geschikte hostname te kiezen voor het apparaat , want de agent gebruikt de hostname van de host als naam binnen de SIEM oplossing. 
 
