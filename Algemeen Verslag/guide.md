@@ -172,6 +172,9 @@ Scripts om een Elastic Agent in te stellen via ansible zijn heel simpel en zien 
         script: /path/naar/linuxelasticagentinstaller.exe
 Het pad naar de installer wordt vervangen door het werkelijke pad op de ansible client.
 
+### Deployed
+Eenmaal het script is geinstalleerd op de hosts zullen de logs binnen beginnen komen op de SIEM. Let wel op dat er steeds een verbinding moet zijn met de SIEM anders zal de install falen, aangezien de installer geen verbinding kan maken met de SIEM.
+
 Naast het installeren van de agents op elke gewenste host , is het ook belangrijk om de firewall rules van de SIEM goed te zetten. 
 Doe je dit niet dan zal de agent niet bereikbaar zijn.
 
