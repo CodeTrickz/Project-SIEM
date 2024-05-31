@@ -137,9 +137,23 @@ Meer uitleg over alle firewall functies is te vinden onder [Firewall Info](https
 # Elastic Agents
 ## Deployen Van Agents
 Het Deployen van agents op hosts en endpoints gebeurd via een elastic agent install bestand. Voor elk Operating System bestaat er andere installer. 
-Deze installers moet je via het SOC-dashboard gedowload worden en vervolgens uitgevoerd als administrator op windows of als root op linux/MacOS. 
-Ook is het aangeraden op een geschikte hostname te kiezen voor het apparaat , want de agent gebruikt de hostname van de host als naam in de SIEM. 
-De installatie kan Zowel manueel als automatisch , de automatische install gebeurd via ansible.
+
+De installatie kan zowel manueel als automatisch , de automatische install gebeurd via ansible of intune.
+
+### Manuele installatie
+De installers moeten via het SOC-dashboard worden gedownload en vervolgens worden uitgevoerd als administrator op windows of als root op linux/MacOS. 
+
+Ook is het aangeraden om een geschikte hostname te kiezen voor het apparaat , want de agent gebruikt de hostname van de host als naam binnen de SIEM oplossing. 
+
+### Automatisch
+
+#### Intune
+De installatie via intune staat volledig beschreven in de [intune handleiding](../Intune/intune.md), zo kan de al bestaande infrastructuur makkelijk worden geintegreerd in de SIEM.
+
+#### Ansible
+Scripts om een Elastic Agent in te stellen via ansible zijn heel simpel en zien er als volgt uit:
+
+
 
 Naast het installeren van de agents op elke gewenste host , is het ook belangrijk om de firewall rules van de SIEM goed te zetten. 
 Doe je dit niet dan zal de agent niet bereikbaar zijn.
