@@ -151,9 +151,26 @@ Ook is het aangeraden om een geschikte hostname te kiezen voor het apparaat , wa
 De installatie via intune staat volledig beschreven in de [intune handleiding](../Intune/intune.md), zo kan de al bestaande infrastructuur makkelijk worden geintegreerd in de SIEM.
 
 #### Ansible
+Als hosts beschikbaar zijn via ssh vanuit 1 ansible client dan is het installeren van de elastic agent heel simpel met 1 script. Dit vereist wel dat je op de ansible client het script lokaal hebt gedownload op een gekende locatie met liefst een duidelijk onderscheidbare naam.
+
 Scripts om een Elastic Agent in te stellen via ansible zijn heel simpel en zien er als volgt uit:
 
+      # Install windows script
+      hosts: windows_hosts
+      become: true
 
+      tasks: 
+      - name: Script installeren
+        script: /path/naar/windowselasticagentinstaller.exe
+---
+      # Install Linux script
+      hosts: linux_hosts
+      become: true
+
+      tasks: 
+      - name: Script installeren
+        script: /path/naar/linuxelasticagentinstaller.exe
+Het pad naar de installer wordt vervangen door het werkelijke pad op de ansible client.
 
 Naast het installeren van de agents op elke gewenste host , is het ook belangrijk om de firewall rules van de SIEM goed te zetten. 
 Doe je dit niet dan zal de agent niet bereikbaar zijn.
