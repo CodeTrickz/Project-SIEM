@@ -153,7 +153,7 @@ De installatie via intune staat volledig beschreven in de [intune handleiding](.
 #### Ansible
 Als hosts beschikbaar zijn via ssh vanuit 1 ansible client dan is het installeren van de elastic agent heel simpel met 1 script. Dit vereist wel dat je op de ansible client het script lokaal hebt gedownload op een gekende locatie met liefst een duidelijk onderscheidbare naam.
 
-Scripts om een Elastic Agent in te stellen via ansible zijn heel simpel en zien er als volgt uit:
+Scripts om een Elastic Agent in te stellen via ansible zien er als volgt uit:
 
       # Install windows script
       hosts: windows_hosts
@@ -395,6 +395,26 @@ Meer informatie omtrent certificaten kan hier geraadpleegd worden: [Certificaat 
 ----
 # ansible scripts
 
+We kunnen ansible gerbuiken om vanuit een Ansible client(admin) taken uit te laten voeren op andere ansible hosts. De administrator heeft hiervoor ssh toegang nodig tot andere computers in het netwerk. Als deze toegang er is kan de administrator heel makkelijk de Elastic Agent, die nodig is om data door te sturen naar de SIEM, installeren vanuit 1 centraal punt. Het voordeel hierin is dat er tijd wordt bespaard en dat de admin niet op elke computer apart een agent moet installeren.
+
+Er zijn verschillende scripts om een agent te installeren maar we hebben ervoor gekozen dat de admin eerst lokaal surft naar het ip van de Security Onion en zelf de agent download op de ansible client machine. Nu kan de agent verdeeld worden met een ansible script dat er als volgt uit ziet:
+
+      # Install windows script
+      hosts: windows_hosts
+      become: true
+
+      tasks: 
+      - name: Script installeren
+        script: /path/naar/windowselasticagentinstaller.exe
+---
+      # Install Linux script
+      hosts: linux_hosts
+      become: true
+
+      tasks: 
+      - name: Script installeren
+        script: /path/naar/linuxelasticagentinstaller.exe
+        
 ----
 # manueel updaten
 
