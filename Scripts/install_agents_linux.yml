@@ -1,0 +1,11 @@
+# File om agent op linux ansible hosts te installeren
+---
+- hosts: linux_hosts
+  become: yes
+  vars_files:
+    - agent_vars.yaml
+
+  tasks:
+    - name: Linux elastic agent executen op remote host
+      ansible.builtin.script: /home/dion/Downloads/elasticagentlinux
+  
