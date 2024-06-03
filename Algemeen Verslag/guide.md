@@ -359,6 +359,26 @@ Meer informatie over de pfsense integration kan hier worden geraadpleegt [PFsens
 ----
 # Certificaten
 ## Instellen van Certificaten
+Security Onion komt met een default certificaat dat wordt aangemaakt tijdens de installatie. Er is dus geen nood om een extern certificaat aan te maken maar je kunt een wel extern certificaat te gebruiken. Volg volgende stappen om een extern in te stellen voor het Security Onion Dashboard.
+
+![cert](./afbeeldingen/cert1.png)
+1. Navigeer naar Administration en vervolgens naar configuration.
+
+![cert](./afbeeldingen/cert2.png)
+2. Zet advanced setting aan.
+
+![cert](./afbeeldingen/cert3.png)
+3. Navigeer naar SSL.
+4. Klik op SSL/TLS Cert File.
+5. Plak het certificaat in het vak en sla dit op.
+
+![cert](./afbeeldingen/cert4.png)
+6. Navigeer naar SSL
+7. Klik op SSL/TLS Key file
+8. Plak de key in het vak en sla dit op.
+
+Meer informatie omtrent certificaten kan hier geraadpleegt worden [Certificaat configuratie ](https://docs.securityonion.net/en/2.4/nginx.html#replacing-default-certl)
+
 
 ----
 # ansible scripts
