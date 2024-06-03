@@ -359,25 +359,37 @@ Meer informatie over de pfsense integration kan hier worden geraadpleegt [PFsens
 ----
 # Certificaten
 ## Instellen van Certificaten
-Security Onion komt met een default certificaat dat wordt aangemaakt tijdens de installatie. Er is dus geen nood om een extern certificaat aan te maken maar je kunt een wel extern certificaat te gebruiken. Volg volgende stappen om een extern in te stellen voor het Security Onion Dashboard.
 
-![cert](./afbeeldingen/cert1.png)
-1. Navigeer naar Administration en vervolgens naar configuration.
+Security Onion komt met een default certificaat dat wordt aangemaakt tijdens de installatie. Er is dus geen nood om een extern certificaat aan te maken, maar je kunt wel een extern certificaat gebruiken. Volg de volgende stappen om een extern certificaat in te stellen voor het Security Onion Dashboard.
 
-![cert](./afbeeldingen/cert2.png)
+### Stappenplan
+
+1. Navigeer naar Administration en vervolgens naar Configuration.
+
+    ![cert](./afbeeldingen/cert1.png)
+
 2. Zet advanced setting aan.
 
-![cert](./afbeeldingen/cert3.png)
+    ![cert](./afbeeldingen/cert2.png)
+
 3. Navigeer naar SSL.
+
+    ![cert](./afbeeldingen/cert3.png)
+
 4. Klik op SSL/TLS Cert File.
+
 5. Plak het certificaat in het vak en sla dit op.
 
-![cert](./afbeeldingen/cert4.png)
 6. Navigeer naar SSL
-7. Klik op SSL/TLS Key file
+
+    ![cert](./afbeeldingen/cert4.png)
+
+7. Klik op SSL/TLS Key file.
+
 8. Plak de key in het vak en sla dit op.
 
-Meer informatie omtrent certificaten kan hier geraadpleegt worden [Certificaat configuratie ](https://docs.securityonion.net/en/2.4/nginx.html#replacing-default-certl)
+Meer informatie omtrent certificaten kan hier geraadpleegd worden: [Certificaat configuratie](https://docs.securityonion.net/en/2.4/nginx.html#replacing-default-certl).
+
 
 
 ----
@@ -408,7 +420,33 @@ Meer informatie omtrent certificaten kan hier geraadpleegt worden [Certificaat c
 ## andere filters
 
 ----
+Hier is de bijgewerkte Markdown-code met een verbeterde lay-out:
+
+```markdown
 # Known Issue's
+
+Als je merkt onder grid > node status dat de Elasticsearch status op "pending" staat zoals op onderstaande afbeelding:
+
+![issue](./afbeeldingen/knownissue1.png)
+
+Dan moet je het volgende commando uitvoeren in de Security Onion Terminal:
+
+```bash
+sudo so-elasticsearch-query _cat/shards | grep UN
+```
+
+Dit geeft een lijst van alle processen die "unassigned" zijn, wat de "pending" status triggert. 
+
+![issue](./afbeeldingen/knownissue2.png)
+
+Om dit op te lossen, moet elke index van alle "unassigned" processen worden ingevuld in dit commando, waarbij `$index` de naam van het proces is:
+
+```bash
+sudo so-elasticsearch-query $index/_settings -d '{"number_of_replicas":0}' -XPUT
+```
+
+Nadat je dit hebt gedaan voor elk proces, zal de "pending" status na een paar minuten verdwijnen.
+```
 
 
 ----
