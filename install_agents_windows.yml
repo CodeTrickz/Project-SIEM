@@ -1,0 +1,9 @@
+# Ansible script die op windows hosts de elastic agent zal installeren
+---
+- hosts: windows_hosts
+  become: yes
+
+  tasks:
+    - name: Windows elastic agent executen
+      ansible.builtin.script: '/home/dion/Downloads/elasticagentwindows'
+    
