@@ -448,9 +448,6 @@ Nadat je dit hebt gedaan voor elk proces, zal de "pending" status na een paar mi
 Meer informatie omtrent actuele issues is te vinden op deze [link](https://docs.securityonion.net/en/2.4/release-notes.html#known-issues).
 ```
 
-----
-
-
 
 
 
