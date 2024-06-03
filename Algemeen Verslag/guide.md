@@ -420,9 +420,7 @@ Meer informatie omtrent certificaten kan hier geraadpleegd worden: [Certificaat 
 ## andere filters
 
 ----
-Hier is de bijgewerkte Markdown-code met een verbeterde lay-out:
 
-```markdown
 # Known Issue's
 
 Als je merkt onder grid > node status dat de Elasticsearch status op "pending" staat zoals op onderstaande afbeelding:
@@ -446,8 +444,9 @@ sudo so-elasticsearch-query $index/_settings -d '{"number_of_replicas":0}' -XPUT
 ```
 
 Nadat je dit hebt gedaan voor elk proces, zal de "pending" status na een paar minuten verdwijnen.
-```
 
+Meer informatie omtrent actuele issues is te vinden op deze [link](https://docs.securityonion.net/en/2.4/release-notes.html#known-issues).
+```
 
 ----
 
