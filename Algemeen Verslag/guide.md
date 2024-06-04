@@ -465,7 +465,13 @@ Indien je één van de functies niet wenst te gebruiken, kun je er een `#` voor 
 ----
 # Dashboard Users
 ## Aanmaken van Dashboard Users
-
+1. Op het security onion druk op het navigatiemenu aan de linkerzijde.
+2. Onder administration &#8594; Users.
+![adduser1](./afbeeldingen/Adduser1.png)
+4. Druk op het kruisje.
+5. Vul de benodigde informatie in.
+![adduser2](./afbeeldingen/Adduser2.png)
+6. `Add user`
 
 ----
 # Dasboard data lezen
