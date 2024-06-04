@@ -354,6 +354,15 @@ Vervolgens zal het verkeer van de pfsense moeten worden toegelaten op `poort 900
 Meer informatie over de pfsense integration kan hier worden geraadpleegt [PFsense configuratie](https://docs.securityonion.net/en/2.4/pfsense.html).
 
 ### cisco
+Ook bij het gebruik van Cisco apparaten zijn er allerlei mogelijke mogelijke integraties waarvan je gebruik kunt maken op de Elastic Fleet. Het toevoegen van deze integraties gebeurd op dezelfde manier als bovenstaande integraties. 
+Hier een korte samenvatting van de mogelijke Cisco integraties en hun toepassingen :
+1.	`Cisco ASA Integration`: Het neemt logboekinformatie op over netwerkverkeer, VPN-verbindingen, firewallgebeurtenissen en beveiligingsincidenten.
+2.	`Cisco Duo Integration`: Het integreert met identiteitsproviders om informatie over gebruikersauthenticatie en -toegang vast te leggen, inclusief gebruikersactiviteit, apparaatstatus en locatiegegevens.
+3.	`Cisco FTD Integration`: Het verzamelt gegevens over bedreigingsdetectie en -preventie, zoals malwareactiviteit, indringingspogingen en geavanceerde bedreigingsindicatoren.
+4.	`Cisco IOS Integration`: Het registreert informatie over netwerkconnectiviteit, routeringsgegevens, switchpoortstatussen en beveiligingsgebeurtenissen zoals toegangscontrole en inbraakdetectie.
+5.	`Cisco ISE Integration`: Het verzamelt gegevens over gebruikers- en apparaatauthenticatie, toegangsverzoeken, beleidsuitvoering en nalevingscontroles voor netwerktoegang.
+6.	`Cisco Meraki Integration`: Het neemt informatie op over netwerkapparaatstatussen, connectiviteit, verkeersstromen en beveiligingsgebeurtenissen zoals indringingspogingen en verdachte activiteiten.
+7.	`Cisco Umbrella Integration`: Het verzamelt DNS-verzoekgegevens, domein- en IP-adresinformatie, en detecteert en logt pogingen tot toegang tot kwaadaardige websites en internetbedreigingen
 
 
 ----
