@@ -362,11 +362,7 @@ Meer informatie over de pfsense integration kan hier worden geraadpleegt [PFsens
 
 Security Onion komt met een default certificaat dat wordt aangemaakt tijdens de installatie. Er is dus geen nood om een extern certificaat aan te maken, maar je kunt wel een extern certificaat gebruiken. Volg de volgende stappen om een extern certificaat in te stellen voor het Security Onion Dashboard.
 
-### Stappenplan
-
 1. Navigeer naar Administration en vervolgens naar Configuration.
-
-    ![cert](./afbeeldingen/cert1.png)
 
 2. Zet advanced setting aan.
 
@@ -420,9 +416,51 @@ Er zijn verschillende scripts om een agent te installeren maar we hebben ervoor 
 
 ----
 # SSH
-## manueel toevoegen ssh keys
+## Manueel toevoegen SSH-sleutels
 
-## ssh config
+Standaard is het mogelijk om via SSH te verbinden met de terminal van Security Onion. De standaard login is de gebruiker `admin` met wachtwoord `uiopuiop`. De beste praktijken zijn om je SSH-sleutel toe te voegen aan de Security Onion-host zodat je bij de volgende verbinding automatisch wordt ingelogd met de sleutel en de inlog niet meer nodig is. Dit doe je met de volgende stappen:
+
+1. Open een terminal in Linux of Command Prompt in Windows
+2. Typ het commando `ssh admin@ipvansecurityonion`
+3. Login met de standaard login
+4. Typ `cd.ssh` om te navigeren naar de map `.ssh`
+5. Maak indien nodig het bestand `authorized_keys` aan met het commando `touch authorized_keys`
+6. Bewerk het bestand met een teksteditor zoals `nano`
+7. Voeg de openbare SSH-sleutel van je machine toe aan het bestand
+8. Sla het bestand op
+9. Herstart de SSH-service met het commando `sudo systemctl restart sshd`
+10. Ga uit de huidige SSH-sessie en maak opnieuw verbinding zoals bij stap twee
+
+Als je niet meer hoeft in te loggen, heb je alles correct gedaan.
+
+## SSH-configuratie
+
+SSH komt met een standaard config, maar deze is te open gedefinieerd, zodat alles zou kunnen dat je overal aan kan. Echter, in realiteit wordt deze best voor securityredenen beperkt, zodat kwaadwillende actoren niet ongewild toegang kunnen verkrijgen, zoals brute force op de standaardlogin. Om de SSH-configuratie te verharden, volg je best de volgende stappen:
+
+1. Open een terminal in Linux of Command Prompt in Windows
+2. Typ het commando `ssh admin@ipvansecurityonion`
+3. Typ `cd /etc/ssh` om te navigeren naar de configuratiemap van SSH
+4. Bewerk het bestand `sshd_config` met een teksteditor zoals `nano`
+5. Zoek naar `PermitRootLogin`, verwijder de `#` en zet het op `no`
+6. Zoek naar `maxauthtries`, verwijder de `#` en zet deze op `3`
+7. Zoek naar `pubkeyauthentication`, verwijder de `#` en zet deze op `yes`
+8. Zoek naar `passwordAuthentication`, verwijder de `#` en zet deze op `no`. Zorg wel dat je eerst zeker kunt inloggen via public key voor je de configuratie toepast
+9. Zoek naar `Permitemptypasswords`, verwijder de `#` en zet deze op `no`
+10. Sla de configuratie op
+11. Herstart de SSH-service met het commando `sudo systemctl restart sshd`
+
+Met deze configuratie is het volgende niet meer mogelijk:
+
+* Inloggen met username en wachtwoord voor authenticatie
+* Rechtstreeks connecteren naar de rootgebruiker met SSH
+* Passwordlogin met een leeg wachtwoord
+
+Ook zorgt dit ervoor dat:
+
+* Je enkel met public key kunt authenticeren
+* Je maximaal aantal loginpogingen hebt
+
+Indien je één van de functies niet wenst te gebruiken, kun je er een `#` voor plaatsen, dan pakt de configuratie de defaultoptie.
 
 ----
 # Dashboard Users
@@ -466,7 +504,7 @@ sudo so-elasticsearch-query $index/_settings -d '{"number_of_replicas":0}' -XPUT
 Nadat je dit hebt gedaan voor elk proces, zal de "pending" status na een paar minuten verdwijnen.
 
 Meer informatie omtrent actuele issues is te vinden op deze [link](https://docs.securityonion.net/en/2.4/release-notes.html#known-issues).
-```
+
 
 
 
