@@ -473,7 +473,19 @@ Indien je één van de functies niet wenst te gebruiken, kun je er een `#` voor 
 4. Druk op het kruisje.
 5. Vul de benodigde informatie in.
 ![adduser2](./afbeeldingen/Adduser2.png)
-6. `Add user`
+6. Kies de rol geschikt voor uw user ( meer informatie Security Onion Roles )
+7. Druk `ADD`
+
+### Security onion roles
+- `Superuser`: Dit is de meest geprivilegieerde rol in Security Onion. Superusers hebben volledige toegang tot alle functies en instellingen binnen het systeem. Ze kunnen configuraties wijzigen, nieuwe gebruikers toevoegen en toegang hebben tot alle data en logs.
+
+- `Analyst`: Een analist heeft toegang tot de meeste functies binnen Security Onion, maar heeft niet dezelfde volledige beheerbevoegdheden als een supergebruiker. Analisten hebben toegang tot beveiligingsgegevens en -logs, en kunnen gegevens analyseren om bedreigingen te identificeren en te onderzoeken.
+
+- `Limited-Analyst`: Een beperkte analist heeft beperktere toegang dan een normale analist. Ze kunnen bepaalde analyses uitvoeren en toegang hebben tot specifieke beveiligingsgegevens, maar hebben mogelijk niet dezelfde diepgaande mogelijkheden als een volledige analist.
+
+- `Auditor`: Een auditor heeft de taak om de beveiligingsgegevens en -logs te controleren en te valideren. Ze kunnen toezicht houden op de activiteiten binnen het systeem en controleren of de beveiligingsmaatregelen effectief zijn. Auditors hebben meestal geen bevoegdheid om wijzigingen aan te brengen, maar richten zich op naleving en beoordeling.
+
+- `Limited-Auditor`: Net als een beperkte analist heeft een beperkte auditor beperktere toegang tot functies en gegevens dan een volledige auditor. Ze kunnen specifieke controles uitvoeren en beveiligingsgegevens bekijken, maar hebben mogelijk niet de volledige toegang tot alle logboeken en systemen.
 
 ----
 # Dasboard data lezen
