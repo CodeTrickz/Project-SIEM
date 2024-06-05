@@ -422,6 +422,52 @@ Er zijn verschillende scripts om een agent te installeren maar we hebben ervoor 
         
 ----
 # manueel updaten
+## Software Updates in Security Onion
+
+In Security Onion is er een speciaal commando beschikbaar genaamd `soup`. Dit staat voor Security Onion Update. Door dit commando uit te voeren, worden alle software, containers en services die bij Security Onion horen, bijgewerkt. Hieronder vind je een stapsgewijze uitleg over hoe je dit kunt doen.
+
+1. **Open de terminal**: Log in op je Security Onion systeem en open de terminal.
+
+2. **Voer het `soup` commando uit**:
+    - Typ `sudo soup` in de terminal en druk op Enter.
+    - Het systeem zal beginnen met het downloaden en installeren van de nieuwste updates voor alle onderdelen van Security Onion.
+
+    ```bash
+    sudo soup
+    ```
+
+3. **Volg de voortgang**: Het updateproces kan enige tijd duren, afhankelijk van de hoeveelheid updates die moeten worden geïnstalleerd. Je kunt de voortgang volgen in de terminal.
+
+4. **Herstart indien nodig**: Soms is een herstart van het systeem nodig om alle updates volledig door te voeren. Als dit het geval is, zal het systeem je hierover informeren. Voer een herstart uit door `sudo reboot` in te typen en op Enter te drukken.
+
+    ```bash
+    sudo reboot
+    ```
+
+## Linux Specifieke Updates
+
+Voor updates die specifiek zijn voor het Linux-besturingssysteem waarop Security Onion draait, moet je een ander commando gebruiken. Dit commando is afhankelijk van de package manager van je Linux-distributie. De distributie die standaard meekomt met de iso van Security Onion is CentOS.
+
+Voor CentOS of RHEL-gebaseerde systemen gebruik je `yum update`:
+
+1. **Voer het `yum update` commando uit**:
+    - Typ `sudo yum update` in de terminal en druk op Enter.
+    - Het systeem zal beginnen met het downloaden en installeren van de nieuwste updates voor het besturingssysteem.
+
+    ```bash
+    sudo yum update
+    ```
+
+2. **Volg de voortgang**: Het updateproces kan enige tijd duren. Volg de voortgang in de terminal.
+
+3. **Herstart indien nodig**: Net als bij de `soup` updates kan een herstart van het systeem nodig zijn. Voer een herstart uit door `sudo reboot` in te typen en op Enter te drukken.
+
+    ```bash
+    sudo reboot
+    ```
+
+Met deze stappen zorg je ervoor dat zowel Security Onion als het onderliggende besturingssysteem up-to-date zijn, wat bijdraagt aan de veiligheid en stabiliteit van je omgeving.
+
 
 ----
 # SSH
