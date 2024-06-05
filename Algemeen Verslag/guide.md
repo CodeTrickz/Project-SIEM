@@ -504,7 +504,23 @@ Indien je één van de functies niet wenst te gebruiken, kun je er een `#` voor 
 
 ## Firewall data
 
-## andere filters
+## Andere Filters
+
+Naast filteren op algemene gegevens en groepen zoals logs van agents of firewall, is het ook mogelijk om met Security Onion op iets zeer specifieks te filteren. Dit kan een IP, een poort of zelfs een service zijn. Onderstaande stappen laten zien hoe je kunt filteren op logs van Office 365 als je deze integratie hebt ingesteld via Fleet. Andere specifieke filters instellen volgen dezelfde stappen.
+
+1. Navigeer naar Dashboards in de Security Onion dashboard.
+2. Zoek de specifieke naam van de service/IP/poort die je wilt filteren.
+3. Klik met de linkermuisknop op de data die je wilt filteren.
+4. Kies de optie "Include". 
+   
+   ![filtersAndere](./afbeeldingen/filtersAndere.png)
+   
+5. Bekijk de gefilterde logs.
+   
+   ![filtersAndere2](./afbeeldingen/filtersAndere2.png)
+
+Dit werkt hetzelfde met de optie "Exclude".
+
 
 ----
 
