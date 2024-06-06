@@ -545,10 +545,16 @@ Indien je één van de functies niet wenst te gebruiken, kun je er een `#` voor 
 ----
 # Dasboard data lezen
 ## Algemene Overview
+Op het dashboard gedeelte van de Security Onion wordt informatie verzamelt van verschillende tools, zo kan je snel met behulp van grafieken een inzicht krijgen in je netwerk. Het dashboard ziet er als volgt uit en laat je toe om enkele factoren aan te passen zoals te periode waaruit logs worden weergegeven.
+
+   ![](./afbeeldingen/1-dashboard.png)
 
 ## Agent data
 
 ## Firewall data
+Firewall data laat ons toe om meer specifiek enkel firewall data weer te geven, we komen hierop terecht door firewall te selecteren in de zoekbalk.
+
+   ![](./afbeeldingen/1-firewall.png)
 
 ## Andere Filters
 
@@ -558,7 +564,7 @@ Naast filteren op algemene gegevens en groepen zoals logs van agents of firewall
 2. Zoek de specifieke naam van de service/IP/poort die je wilt filteren.
 3. Klik met de linkermuisknop op de data die je wilt filteren.
 4. Kies de optie "Include". 
-   
+      
    ![filtersAndere](./afbeeldingen/filtersAndere.png)
    
 5. Bekijk de gefilterde logs.
