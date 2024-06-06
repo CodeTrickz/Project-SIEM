@@ -549,6 +549,10 @@ Op het dashboard gedeelte van de Security Onion wordt informatie verzamelt van v
 
    ![](./afbeeldingen/1-dashboard.png)
 
+Hoe verder er naar onder wordt gescrolled hoe specifieker de data wordt, hier zien we een cirkeldiagram van het netwerk en kunnen we de algemene verdeling van de internettrafiek bekijken.
+
+   ![](./afbeeldingen/2-dashboard.png)
+
 ## Agent data
 
 ## Firewall data
