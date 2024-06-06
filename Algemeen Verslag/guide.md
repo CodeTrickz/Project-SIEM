@@ -553,6 +553,14 @@ Hoe verder er naar onder wordt gescrolled hoe specifieker de data wordt, hier zi
 
    ![](./afbeeldingen/2-dashboard.png)
 
+Het dashboard van Security Onion biedt een centraal overzicht van netwerkbeveiliging. Het toont real-time data over netwerkverkeer en systeemstatus. Widgets kunnen helpen met het opsporen van verdachte activiteiten en IP-adressen. Je kunt onderaan gedetailleerde events bekijken en logbestanden doorzoeken voor diepgaande analyse. Daarnaast monitor je de prestaties en gezondheid van het Security Onion systeem zelf en alle agents die daarbij zijn aangesloten.
+
+Als we de events in meer detail willen bekijken doen we dat door deze uit te plooien door op het peiltje omlaag te klikken.
+
+   ![](./afbeeldingen/3-dashboard.png)
+
+Hier zien we meer informatie over de events zoals mac adressen en IP adressen, versies van programmas en details over het event zelf. We zien ook een soc_score, deze bepaalt hoe ernstig een event is op basis van een berekening.
+
 ## Agent data
 
 ## Firewall data
