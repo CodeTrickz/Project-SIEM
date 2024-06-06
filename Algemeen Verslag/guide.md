@@ -562,6 +562,9 @@ Als we de events in meer detail willen bekijken doen we dat door deze uit te plo
 Hier zien we meer informatie over de events zoals mac adressen en IP adressen, versies van programmas en details over het event zelf. We zien ook een soc_score, deze bepaalt hoe ernstig een event is op basis van een berekening.
 
 ## Agent data
+Onder Host Overview krijg je meer data te zien over Hosts en algemene data zoals het OS waarop deze draait.
+
+   ![](./afbeeldingen/1-agents.png)
 
 ## Firewall data
 Firewall data laat ons toe om meer specifiek enkel firewall data weer te geven, we komen hierop terecht door firewall te selecteren in de zoekbalk.
