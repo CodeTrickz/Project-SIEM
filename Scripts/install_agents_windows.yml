@@ -5,5 +5,5 @@
 
   tasks:
     - name: Windows elastic agent executen
-      ansible.builtin.script: '/home/dion/Downloads/elasticagentwindows'
+      ansible.builtin.script: '/home/dion/Downloads/elasticagentwindows.exe'
     
